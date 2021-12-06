@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { React, Fragment} from 'react';
+import { Routes, Route, useLocation } from "react-router-dom";
+import Landing from "./0-Landing/Landing"
+import Navbar from "./Navbar&Footer/Navbar";
+import Auth from "./1-Auth/Auth"
+import Home from "./2-Home/Home"
+import Recipes from "./3-Recipes/Recipes"
+import Groceries from "./4-Groceries/Groceries"
+import Footer from "./Navbar&Footer/Footer"
 
 function App() {
+  let location = useLocation();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+        {(location.pathname === '/') ? null : <Navbar/>}
+          <Routes>
+            <Route exact path="/" element={<Landing/>} />
+            <Route path="/auth" element={<Auth/>} />
+            <Route path="/home" element={<Home/>} />
+            <Route path="/recipes" element={<Recipes/>} />
+            <Route path="/groceries" element={<Groceries/>} />
+          </Routes>
+          {(location.pathname === '/') ? null : <Footer/>}
+    </Fragment>
   );
 }
 
