@@ -5,7 +5,7 @@ import './landing.css'
 function Landing() {
     return (
         <div>
-            <h1>LANDING PAGE</h1>
+            <h2>LANDING PAGE</h2>
             <Link to="/home"><button>Go to Home</button></Link>
         </div>
     )

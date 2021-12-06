@@ -1,0 +1,120 @@
+.navbar-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: #d7d7d7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px -2px gray;
+}
+.navbar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+.navbar-box-one {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 22.5%;
+}
+.navbar-logo {
+    text-decoration: none;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #111;
+}
+.navbar-logo span {
+    color: var(--primary-color);
+}
+.navbar-box-two {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 56.5%;
+}
+.navbar-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar-search input {
+    height: 4.35rem;
+    width: 55rem;
+    outline: none;
+    border: none;
+    border-radius: .5rem 0 0 .5rem;
+    padding-left: 1.75rem;
+    font-size: 2.125rem;
+    font-weight: 500;
+    background-color: #fff;
+    border-top: 2px solid #555;
+    border-left: 2px solid #555; 
+    border-bottom: 2px solid #555;
+}
+.navbar-search input:focus { 
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+#navbar-search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.75rem;
+    width: 6.5rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 .5rem .5rem 0;
+    background-color: #ddd;
+    border-top: 2px solid #555;
+    border-right: 2px solid #555; 
+    border-bottom: 2px solid #555;
+}
+.navbar-search input:focus + #navbar-search-btn { 
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+#navbar-search-btn img {
+    height: auto;
+    height: 3.5rem;
+}
+.navbar-box-three {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 10.5%;
+}
+.navbar-recipes-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar-recipes-box img {
+    position: relative;
+    height: 7.5rem;
+    width: auto;
+}
+.navbar-recipes-box p {
+    font-family: monospace;
+    position: absolute;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #111;
+}
+.navbar-box-four {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 10.5%;
+}
+.navbar-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5.25rem;
+    width: auto;
+}

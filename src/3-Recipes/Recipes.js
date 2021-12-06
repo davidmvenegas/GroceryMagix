@@ -3,7 +3,7 @@ import './recipes.css'
 
 function Recipes() {
     return (
-        <div>
+        <div className="recipes-container">
             <h1>RECIPES</h1>
         </div>
     )
