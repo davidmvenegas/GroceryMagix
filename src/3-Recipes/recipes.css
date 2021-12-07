@@ -1,5 +1,119 @@
 .recipes-container {
     position: relative;
-    top: 10vh;
+    top: 5vh;
     height: 80vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 12.5rem;
+}
+.recipes-wrapper {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.recipes-box-1 {
+    flex: 80%;
+    min-height: 75vh;
+}
+.recipes-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.recipes-title-wrapper {
+    height: 15vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin: 0 0 1.25rem 1rem;
+}
+.recipes-title-wrapper h1 {
+    font-size: 4.5rem;
+    font-weight: 500;
+}
+#recipes-remove-all {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #222;
+    padding-left: .5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    text-decoration: underline;
+}
+#recipes-remove-all:hover {
+    cursor: pointer;
+    color: red;
+    font-weight: 700;
+}
+.recipes-header button {
+    margin: 0 1rem 1.75rem 0;
+    width: 22rem;
+    height: 4.5rem;
+    background-color: #FFD000;
+    text-transform: uppercase;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border: none;
+    outline: none;
+    transition: background-color .05s ease;
+}
+.recipes-header p {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -.035rem;
+}
+.recipes-header span {
+    padding-right: .35rem;
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+.recipes-header button:hover {
+    cursor: pointer;
+    background-color: #ffbb00;
+}
+.recipes-header button:active {
+    transform: scale(.985);
+}
+.my-recipes-seperator {
+    position: absolute;
+    margin-right: 5vw;
+    width: 64vw;
+    height: .2rem;
+    background-color: gray;
+}
+.recipes-content {
+    min-height: 20vh;
+}
+.recipes-footer {
+    height: 15vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin: 1.25rem 1rem 0 0;
+}
+.recipes-footer h1 {
+    font-size: 2.6rem;
+    font-weight: 400;
+    text-align: center;
+}
+.recipes-footer span {
+    text-align: center;
+    font-weight: 600;
+    font-size: 3rem;
+}
+.recipes-box-2 {
+    flex: 20%;
+    min-height: 75vh;
+    border-left: 2px solid gray;
+    margin-left: 4rem;
+    margin-right: -4rem;
 }

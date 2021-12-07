@@ -1,18 +1,15 @@
-import { React, useState} from 'react'
+import { React} from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import './navbar.css'
 import DishIcon from '../Images/dish_icon.png'
 import UserIcon from '../Images/user_icon.png'
 import SearchIcon from '../Images/search_icon.png'
-import Home from '../2-Home/Home';
 
-function Navbar() {
+function Navbar({setInput}) {
     const navigate = useNavigate();
-    const [input, setInput] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        <Home input={input}/>
         navigate('/home');
     };
 
