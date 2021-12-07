@@ -14,14 +14,17 @@ html {
     font-family: 'Montserrat', sans-serif;
 }
 body {
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, rgba(244,244,244,1) 0%, rgba(96,165,250,1) 100%);
 }
-h1 {
+::-webkit-scrollbar {
+    display: none;
+}
+.placeholder {
     font-size: 5rem;
     text-align: center;
     padding-top: 20rem;
 }
-h2 {
+.placeholder2 {
     font-size: 5rem;
     text-align: center;
     padding-top: 5rem;

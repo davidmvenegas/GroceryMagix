@@ -1,0 +1,120 @@
+.home-recipe-card {
+    margin: 1.15rem 0;
+    width: 95%;
+    position: relative;
+    box-shadow: .5rem .5rem .75rem rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    height: 16rem;
+    border-radius: 1rem;
+    background-color: #ddd;
+}
+.home-recipe-card-text-container {
+    width: 75%;
+    height: 16rem;
+    padding: 0 1rem 0 2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.home-recipe-card-text-container a {
+    text-decoration: none;
+}
+.home-recipe-card-title {
+    font-size: 2.75rem;
+    line-height: 2.5rem;
+    padding-top: 1rem;
+    color: #222;
+    text-transform: capitalize;
+}
+.home-recipe-card-description {
+    font-size: 1.55rem;
+    line-height: 2.25rem;
+    width: 90%;
+}
+.home-recipe-card-seperator {
+    height: 2.5rem;
+    width: .15rem;
+    background-color: #222;
+    border-radius: 5rem;
+}
+#home-recipe-calories {
+    padding-left: 1.75rem;
+}
+.home-recipe-card-details {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: .25rem;
+}
+.home-recipe-card-details p {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #222;
+    padding-right: 2.5rem;
+}
+.home-recipe-card-details-time-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1.75rem;
+}
+.home-recipe-card-details-time-container img {
+    height: 2.5rem;
+    width: auto;
+    padding-right: .5rem;
+}
+.home-recipe-tooltip-icon {
+    position: absolute;
+    height: 3.5rem;
+    width: auto;
+    top: .85rem;
+    right: 20.5%;
+    cursor: pointer;
+    transition: all .15s ease;
+}
+#tooltip-header #tooltip-description {
+    position: absolute;
+}
+.home-recipe-tooltip-icon:hover {
+    transform: scale(1.05);
+}
+title {
+    width: 10rem;
+}
+.home-recipe-card-add-btn {
+    position: absolute;
+    bottom: 1.35rem;
+    right: 21%;
+    height: 3.5rem;
+    width: 7.75rem;
+    background-color: #FFB000;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 7.5px;
+    border: none;
+    font-size: 1.75rem;
+    color: black;
+    font-weight: 700;
+}
+.home-recipe-card-add-btn:hover {
+    cursor: pointer;
+    background-color: rgb(240, 164, 0);
+}
+.home-recipe-card-add-btn:active {
+    transform: scale(.975);
+}
+.home-recipe-card-image-wrapper {
+    width: 30%;
+    height: 16rem;
+    display: flex;
+    justify-content: flex-end;
+}
+.home-recipe-card-image {
+    align-items: center;
+}
+.home-recipe-card-image img {
+    width: 100%;
+    height: 16rem;
+    border-radius: 0 1rem 1rem 0;
+}

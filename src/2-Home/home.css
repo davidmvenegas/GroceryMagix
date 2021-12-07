@@ -1,5 +1,60 @@
 .home-container {
     position: relative;
-    top: 10vh;
-    height: 80vh;
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(244,244,244,1) 0%, rgba(96,165,250,1) 50%);
+}
+.home-wrapper {
+    width: 80%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.home-side-container {
+    height: 135vh;
+    width: 12.5%;
+    margin: 5vh 3.5% 1.5vh 1.75%;
+    padding: 9vh 0;
+    border-right: 2px dotted #bbb;
+}
+.home-side-container ul {
+    padding: .25rem 0 2rem;
+}
+.home-side-container h2 {
+    font-size: 1.85rem;
+}
+.home-side-container li {
+    font-size: 1.6rem;
+    padding: .175rem 0;
+    list-style-type: none;
+    line-height: 2.5rem;
+}
+.home-side-container li:hover {
+    cursor: pointer;
+    color: #3586ff;
+}
+.home-center-container {
+    min-height: 150vh;
+    width: 73.5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2.5rem;
+    margin-bottom: 12.5rem;
+}
+.home-scroll-btn {
+    position: fixed;
+    right: 5.35%;
+    bottom: 11.5%;
+    font-size: 5rem;
+    cursor: pointer;
+    transition: opacity .5s ease, transform .25s ease;
+}
+.home-scroll-btn:hover {
+    transform: scale(1.05);
 }

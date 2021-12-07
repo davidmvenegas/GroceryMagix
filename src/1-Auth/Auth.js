@@ -4,7 +4,7 @@ import './auth.css'
 function Auth() {
     return (
         <div className="auth-container">
-            <h1>AUTH</h1>
+            <h1 className="placeholder">AUTH</h1>
         </div>
     )
 }

@@ -4,7 +4,7 @@ import './recipes.css'
 function Recipes() {
     return (
         <div className="recipes-container">
-            <h1>RECIPES</h1>
+            <h1 className="placeholder">RECIPES</h1>
         </div>
     )
 }
