@@ -15,7 +15,7 @@ function Recipes() {
                     </div>
                         <div className="my-recipes-seperator"></div>
                             <div className="recipes-content">
-
+                                
                             </div>
                         <div className="my-recipes-seperator"></div>
                     <div className="recipes-footer">
@@ -23,7 +23,17 @@ function Recipes() {
                     </div>
                 </div>
                 <div className="recipes-box-2">
-
+                    <div className="recipes-shopping-list-wrapper">
+                        <h1 className="recipes-shopping-lists-title">Shopping Lists <span>(5)</span></h1>
+                        <div className="recipes-shopping-lists-content-seperator"></div>
+                        <div className="recipes-shopping-lists-container">
+                            <h1>Week 1</h1>
+                            <h1>Week 2</h1>
+                            <h1>Week 3</h1>
+                            <h1>Week 4</h1>
+                            <h1>Week 5</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
