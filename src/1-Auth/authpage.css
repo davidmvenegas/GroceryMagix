@@ -1,0 +1,82 @@
+.auth-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.auth-input {
+    padding: 1.2rem;
+    margin: 1.2rem;
+    font-size: 1.4rem;
+    border: .1rem solid #ccc;
+    box-shadow: 0 .1rem .4rem #ccc;
+    border-radius: .6rem;
+    font-size: 1.8rem;
+    width: 93%;
+}
+.auth-button {
+    background-color: teal;
+    border: none;
+    color: white;
+    padding: 1.2rem;
+    margin: 1.2rem 0;
+    box-shadow: 0 .1rem .6rem #ccc;
+    width: 100%;
+    border-radius: .6rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.auth-box-container {
+    box-shadow: 0 .1rem .6rem #aaa;
+    border-radius: .6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40rem;
+    padding: 2.2rem;
+}
+.auth-box-container > p {
+    cursor: pointer;
+    margin: 1.2rem;
+    font-size: 1.2rem;
+    padding-top: .25rem;
+    margin-bottom: -.25rem;
+}
+.auth-form {
+    width: 100%;
+}
+.auth-form > h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: #222;
+}
+.auth-form > form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.auth-form > form > p {
+    padding-top: .5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.auth-error {
+    font-size: 1.4rem;
+    background-color: tomato;
+    color: white;
+    border-radius: .6rem;
+    padding: .6rem 1.2rem;
+    font-weight: bold;
+    max-width: 40rem;
+    margin-bottom: 1.8rem;
+}
+.auth-loading-message {
+    font-size: 2.25rem;
+    color: #222;
+}
