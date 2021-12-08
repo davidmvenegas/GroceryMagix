@@ -1,12 +1,13 @@
 import { React} from 'react'
-import { Link, useNavigate } from 'react-router-dom';
 import './navbar.css'
+import { Link, useNavigate } from 'react-router-dom';
+import { useUserContext } from "../1-Auth/context/userContext";
 import DishIcon from '../Images/dish_icon.png'
-import UserIcon from '../Images/user_icon.png'
 import SearchIcon from '../Images/search_icon.png'
 
 function Navbar({setInput}) {
     const navigate = useNavigate();
+    const { logoutUser } = useUserContext();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,7 +18,7 @@ function Navbar({setInput}) {
         <div className="navbar-container">
             <div className="navbar-wrapper">
                 <div className="navbar-box-one">
-                    <Link className="navbar-logo" to="/">Grocery Magi<span>x</span></Link>
+                    <h1 className="navbar-logo" to="/">Grocery Magi<span>x</span></h1>
                 </div>
                 <div className="navbar-box-two">
                     <form className="navbar-search" onSubmit={handleSubmit}>
@@ -34,8 +35,8 @@ function Navbar({setInput}) {
                     </Link>
                 </div>
                 <div className="navbar-box-four">
-                    <Link to="/auth">
-                        <img className="navbar-user" src={UserIcon} alt="user_icon" />
+                    <Link to="/">
+                        <button className="navbar-logout-button" onClick={logoutUser}>Log out</button>
                     </Link>
                 </div>
             </div>

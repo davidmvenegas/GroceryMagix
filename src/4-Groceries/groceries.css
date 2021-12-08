@@ -1,0 +1,25 @@
+.groceries-container {
+    min-height: 80vh;
+}
+.groceries-header {
+    display: flex;
+    justify-content: space-evenly;
+}
+.ingredients-list {
+    text-align: center;
+    margin-left: 400px;
+}
+.item {
+    padding: 2%;
+    background-color: pink;
+}
+.cart {
+    /* height: 10px;
+    width: 10%; */
+    background-color: pink;
+    font-size: 10px;
+}
+#cart-thingy {
+    height: 100px;
+    width: 100px;
+}
