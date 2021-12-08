@@ -1,5 +1,6 @@
 import React from 'react'
 import './recipes.css'
+import SavedRecipe from './SavedRecipe'
 
 function Recipes() {
     return (
@@ -14,8 +15,10 @@ function Recipes() {
                         <button><span>+</span><p>Create New List</p></button>
                     </div>
                         <div className="my-recipes-seperator"></div>
-                            <div className="recipes-content">
-                                
+                            <div className="saved-recipe-wrapper">
+                                <SavedRecipe />
+                                <SavedRecipe />
+                                <SavedRecipe />
                             </div>
                         <div className="my-recipes-seperator"></div>
                     <div className="recipes-footer">
@@ -24,7 +27,7 @@ function Recipes() {
                 </div>
                 <div className="recipes-box-2">
                     <div className="recipes-shopping-list-wrapper">
-                        <h1 className="recipes-shopping-lists-title">Shopping Lists <span>(5)</span></h1>
+                        <h1 className="recipes-shopping-lists-title">Shopping Lists (<span>5</span>)</h1>
                         <div className="recipes-shopping-lists-content-seperator"></div>
                         <div className="recipes-shopping-lists-container">
                             <h1>Week 1</h1>

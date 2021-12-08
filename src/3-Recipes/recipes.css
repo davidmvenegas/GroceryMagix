@@ -37,18 +37,17 @@
 }
 #recipes-remove-all {
     text-transform: uppercase;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 600;
     color: #222;
-    padding-left: .5rem;
-    padding-top: .5rem;
+    padding-left: .25rem;
+    padding-top: .25rem;
     padding-bottom: .5rem;
     text-decoration: underline;
 }
 #recipes-remove-all:hover {
     cursor: pointer;
     color: red;
-    font-weight: 700;
 }
 .recipes-header button {
     margin: 0 1rem 2rem 0;
@@ -64,7 +63,7 @@
     flex-direction: row;
     border: none;
     outline: none;
-    transition: background-color .05s ease;
+    transition: background-color .1s ease;
 }
 .recipes-header p {
     font-size: 1.75rem;
@@ -90,15 +89,12 @@
     height: .25rem;
     background-color: gray;
 }
-.recipes-content {
-    min-height: 20vh;
-}
 .recipes-footer {
     height: 15vh;
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
-    margin: 1.25rem 1rem 0 0;
+    margin: 3.5rem 1rem 0 0;
 }
 .recipes-footer h1 {
     font-size: 2.6rem;
@@ -118,15 +114,15 @@
     margin-right: -4rem;
 }
 .recipes-shopping-list-wrapper {
-    padding: 5rem 0 0 3.5rem;
+    padding: 1.15rem 0 0 3.5rem;
 }
 .recipes-shopping-lists-title {
     font-size: 2.25rem;
-    font-weight: 500;
+    font-weight: 700;
 }
-.recipes-shopping-list-title {
-    font-weight: 600;
-    font-size: 2.5rem;
+.recipes-shopping-list-wrapper span {
+    font-weight: 700;
+    color: #444;
 }
 .recipes-shopping-lists-content-seperator {
     height: .2rem;
@@ -141,4 +137,7 @@
     font-size: 1.8rem;
     font-weight: 400;
     padding: 1rem 0;
+}
+.saved-recipe-wrapper {
+    margin: 2.5rem 0;
 }
