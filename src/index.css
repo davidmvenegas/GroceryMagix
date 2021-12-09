@@ -19,13 +19,3 @@ body {
 ::-webkit-scrollbar {
     display: none;
 }
-.placeholder {
-    font-size: 5rem;
-    text-align: center;
-    padding-top: 20rem;
-}
-.placeholder2 {
-    font-size: 5rem;
-    text-align: center;
-    padding-top: 5rem;
-}
