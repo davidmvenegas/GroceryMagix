@@ -1,7 +1,7 @@
 .recipes-container {
     position: relative;
     top: 5vh;
-    height: 80vh;
+    min-height: 80vh;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -10,7 +10,7 @@
 .recipes-wrapper {
     width: 80%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 .recipes-box-1 {
@@ -37,7 +37,7 @@
 }
 #recipes-remove-all {
     text-transform: uppercase;
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #222;
     padding-left: .25rem;
@@ -106,9 +106,12 @@
     font-weight: 600;
     font-size: 3rem;
 }
+.saved-recipe-wrapper {
+    margin: 3rem 0;
+}
 .recipes-box-2 {
     flex: 20%;
-    min-height: 75vh;
+    height: fit-content;
     border-left: 2px solid gray;
     margin-left: 4rem;
     margin-right: -4rem;
@@ -118,26 +121,37 @@
 }
 .recipes-shopping-lists-title {
     font-size: 2.25rem;
-    font-weight: 700;
+    font-weight: 600;
 }
 .recipes-shopping-list-wrapper span {
-    font-weight: 700;
-    color: #444;
+    font-weight: 800;
+    color: #252525;
 }
 .recipes-shopping-lists-content-seperator {
     height: .2rem;
     width: 13.5vw;
     background-color: gray;
-    margin: 1.75rem 0;
+    margin: 1rem 0;
 }
 .recipes-shopping-lists-container {
     padding-left: .125rem;
+    margin-top: 2rem;
 }
 .recipes-shopping-lists-container h1 {
-    font-size: 1.8rem;
+    border: 1px solid black;
+    font-size: 2.25rem;
     font-weight: 400;
-    padding: 1rem 0;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: .75rem;
+    color: #222;
+    background-color: rgba(255, 255, 255, 0.5);
 }
-.saved-recipe-wrapper {
-    margin: 2.5rem 0;
+.recipes-shopping-lists-container h1:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.65);
+    cursor: pointer;
+}
+#recipes-list-item {
+    text-decoration: none;
 }

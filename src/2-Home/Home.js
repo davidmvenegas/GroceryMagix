@@ -13,11 +13,11 @@ function Home({input}) {
         axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=cb497740&app_key=5230ca56100a7c424dbcd724d88fd3d8`)
         .then(res => {
             setRecipes(res.data.hits)
-            console.log(res.data.hits);
+            // console.log(res.data.hits);
         })
         }, [input]);
 
-    const toggleVisibility = () => (window.pageYOffset > 800) ? setIsVisible(true) : setIsVisible(false)
+    const toggleVisibility = () => (window.pageYOffset > 1250) ? setIsVisible(true) : setIsVisible(false)
     const scrollToTop = () => window.scrollTo({top:0, behavior:'smooth'})
     
     useEffect(() => {

@@ -19,9 +19,10 @@ function Footer() {
                 <li><a target="_blank" href="https://www.youtube.com/" rel="noreferrer"><FontAwesomeIcon icon={faYoutube} /></a></li>
                 <li><a target="_blank" href="https://www.github.com/" rel="noreferrer"><FontAwesomeIcon icon={faGithub} /></a></li>
             </ul>
-            <p>&copy;2021 <a href="https://github.com/davidmvenegas">David Venegas</a> & <a href="https://github.com/tanikaye">Tani Kaye</a> | All Rights Reserved</p>
+            <p>&copy;2021 <a target="_blank" rel="noreferrer" href="https://github.com/davidmvenegas">David Venegas</a> & <a target="_blank" rel="noreferrer" href="https://github.com/tanikaye">Tani Kaye</a> | All Rights Reserved</p>
         </footer>
     )
 }
+
 
 export default Footer

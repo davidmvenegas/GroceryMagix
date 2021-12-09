@@ -1,25 +1,254 @@
 .groceries-container {
     min-height: 80vh;
 }
-.groceries-header {
+.g-header {
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    justify-content: center;
+    width: 75vw;
+    margin-left: 12.5vw;
+    margin-top: 5vh;
 }
-.ingredients-list {
+.g-header-bx1 {
+    width: 25%;
+    display: flex;
+    height: 7.5vh;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.g-back-btn {
+    background-color: #292929;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 1.125rem 1.75rem;
+    margin: 1rem 0;
+    box-shadow: 0 0 .2rem #3586ff99;
+    border-radius: .4rem;
+    cursor: pointer;
+    transition: all .1s ease;
+}
+.g-back-btn:hover {
+    background-color: #111;
+}
+.g-header-bx2 {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: .25rem;
+    border-bottom: 3px dotted #777;
+}
+.g-title {
+    font-size: 4rem;
+    font-weight: 600;    
+}
+.g-header-bx3 {
+    width: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-right: -1rem;
+}
+.g-copy-icon {
+    height: 4.25rem;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+.g-copy-icon:hover {
+    transform: scale(1.065)
+}
+.g-copy-icon:active {
+    transform: scale(.9)
+}
+.g-header-bx4 {
+    width: 12%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 5vh;
+    margin-left: .25rem;
+    margin-right: -.25rem;
+}
+.g-select-box {
+    height: 3.75rem;
+    width: 9.5rem;
+    font-size: 1.85rem;
+    font-weight: 400;
+    border-radius: .4rem;
+    padding-left: .5rem;
+    border: none;
+    outline: none;
     text-align: center;
-    margin-left: 400px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    text-align: start;
+    transition: all .15s ease;
 }
-.item {
-    padding: 2%;
-    background-color: pink;
+.g-select-box:hover {
+    background-color: rgba(0, 0, 0, 0.65);
 }
-.cart {
-    /* height: 10px;
-    width: 10%; */
-    background-color: pink;
-    font-size: 10px;
+#g-select-option {
+    font-size: 2rem;
+    color: #f4f4f4;
+    font-weight: 600;
+    cursor: pointer;
 }
-#cart-thingy {
-    height: 100px;
-    width: 100px;
+.g-header-bx5 {
+    width: 8%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 7vh;
+}
+.g-cart-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.g-cart-wrapper span {
+    position: absolute;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 5.75rem;
+    margin-left: .5rem;
+}
+.g-cart-icon {
+    height: 5rem;
+}
+.g-seperator {
+    height: 1px;
+    width: 80vw;
+    background-color: #444;
+    margin-left: 10vw;
+    margin-top: 1.65rem;
+    margin-bottom: 2.5rem;
+}
+.g-body {
+    display: flex;
+    width: 75vw;
+    margin-left: 12.5vw;
+    margin-top: 2.5vh;
+    height: 40vh;
+}
+.g-body-bx1 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-right: -10vw;
+    margin-top: 1rem;
+}
+.g-body-recipe-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    margin: .5rem 0;
+}
+.g-body-recipe-wrapper h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 1rem;
+}
+.g-body-recipe-wrapper img {
+    height: 5rem;
+    width: auto;
+    border-radius: .35rem;
+    border: .2rem solid #353535;
+}
+.g-body-seperator {
+    height: 100%;
+    width: .15rem;
+    background-color: transparent;
+    margin-left: 10vw;
+    margin-top: 1rem;
+}
+.g-body-bx2 {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: fit-content;
+    margin-top: -.75rem;
+    border-left: .1rem solid #292929;
+}
+.g-body-grocery-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: -.5rem;
+}
+.g-body-grocery-header-types {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5%;
+    margin-top: .25rem;
+}
+.g-body-grocery-item-type-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-right: 1.75rem;
+}
+.g-body-grocery-item-type {
+    margin-right: .5rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    background-color: #888;
+    border-radius: 50%;
+    border: .2rem solid #555;
+}
+#produce {
+    background-color: #2dc653;
+}
+#meat {
+    background-color: #ee6055;
+}
+#dairy {
+    background-color: #48bfe3;
+}
+#grains {
+    background-color: wheat;
+}
+#oilsandspices {
+    background-color: #c8b6ff;
+}
+.g-body-grocery-header-remove-all {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #222;
+    padding-left: .25rem;
+    padding-top: .25rem;
+    padding-bottom: .5rem;
+    text-decoration: underline;
+    margin-top: .65rem;
+}
+.g-body-grocery-header-remove-all:hover {
+    cursor: pointer;
+    color: red;
+}
+.g-body-grocery-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 2rem 0;
 }

@@ -115,14 +115,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     flex: 10.5%;
 }
-.navbar-user {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5rem;
-    width: auto;
+.navbar-user-greeting {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: .6rem 0 -.6rem 0;
 }
 .navbar-logout-button {
     background-color: #222;

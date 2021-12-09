@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './recipes.css'
 import SavedRecipe from './SavedRecipe'
 
 function Recipes() {
+
     return (
         <div className="recipes-container">
             <div className="recipes-wrapper">
@@ -19,6 +21,8 @@ function Recipes() {
                                 <SavedRecipe />
                                 <SavedRecipe />
                                 <SavedRecipe />
+                                <SavedRecipe />
+                                <SavedRecipe />
                             </div>
                         <div className="my-recipes-seperator"></div>
                     <div className="recipes-footer">
@@ -30,7 +34,7 @@ function Recipes() {
                         <h1 className="recipes-shopping-lists-title">Shopping Lists (<span>5</span>)</h1>
                         <div className="recipes-shopping-lists-content-seperator"></div>
                         <div className="recipes-shopping-lists-container">
-                            <h1>Week 1</h1>
+                            <Link id="recipes-list-item" to='/groceries'><h1>Week 1</h1></Link>
                             <h1>Week 2</h1>
                             <h1>Week 3</h1>
                             <h1>Week 4</h1>
