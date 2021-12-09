@@ -35,6 +35,7 @@ function Navbar({setInput}) {
                     </Link>
                 </div>
                 <div className="navbar-box-four">
+                <h1 className="navbar-user-greeting">Hello, Tani</h1>
                     <Link to="/">
                         <button className="navbar-logout-button" onClick={logoutUser}>Log out</button>
                     </Link>

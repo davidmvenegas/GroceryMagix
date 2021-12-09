@@ -24,10 +24,10 @@ footer {
     color: white;
     margin: 0 1.5rem;
     display: inline-block;
-    transition: all .5s ease;
+    transition: all .25s ease;
 }
 .footer-socials li a:hover {
-    transform: translateY(-1rem);
+    transform: translateY(-.75rem);
 }
 footer p {
     color: white;

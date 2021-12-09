@@ -49,11 +49,11 @@
 }
 .home-scroll-btn {
     position: fixed;
-    right: 5.35%;
-    bottom: 11.5%;
+    left: 13.5%;
+    bottom: 32.55%;
     font-size: 5rem;
     cursor: pointer;
-    transition: opacity .5s ease, transform .25s ease;
+    transition: opacity .3s ease, transform .25s ease;
 }
 .home-scroll-btn:hover {
     transform: scale(1.05);

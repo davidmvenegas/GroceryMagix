@@ -20,7 +20,10 @@ function SavedRecipe() {
                 </div>
             </div>
             <div className="recipes-content-3">
-                <h2>GROCERIES: 8</h2>
+                <div className="recipes-g-amount">
+                    <h2>GROCERIES: </h2>
+                    <span>8</span>
+                </div>
                 <img src={TrashIcon} alt="" />
             </div>
         </div>

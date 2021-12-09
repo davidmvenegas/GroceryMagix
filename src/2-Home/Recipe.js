@@ -5,6 +5,11 @@ import InfoIcon from '../Images/info_icon.png'
 
 function Recipe(recipe) {
     let timeArr = [15, 20, 30, 40, 45, 50, 60, 75]
+    
+    function addRecipeInfo() {
+        console.log(recipe);
+    }
+
     return (
         <div className="home-recipe-card">
             <div className="home-recipe-card-text-container">
@@ -21,7 +26,7 @@ function Recipe(recipe) {
                     <p id="home-recipe-calories">{Math.trunc(recipe.recipe.calories/recipe.recipe.yield)} Calories</p>
                 </div>
                 <a target="_blank" rel='noreferrer noopener' href={recipe.recipe.url}><img className="home-recipe-tooltip-icon" src={InfoIcon} alt="info_icon" /></a>
-                <button className="home-recipe-card-add-btn">ADD</button>
+                <button className="home-recipe-card-add-btn" onClick={() => (addRecipeInfo())}>ADD</button>
             </div>
             <div className="home-recipe-card-image-wrapper">
                 <div className="home-recipe-card-image">
