@@ -119,19 +119,19 @@
     flex: 10.5%;
 }
 .navbar-user-greeting {
-    font-size: 1.6rem;
+    font-size: 1.65rem;
     font-weight: 500;
-    margin: .6rem 0 -.6rem 0;
+    margin: .75rem 0 -.75rem 0;
 }
 .navbar-logout-button {
     background-color: #222;
     border: none;
     color: white;
-    padding: 1rem 1.2rem;
+    padding: .775rem 1.2rem;
     margin: 1.2rem 0;
     box-shadow: 0 .1rem .6rem #3586ff;
     width: 100%;
-    border-radius: .6rem;
+    border-radius: .5rem;
     font-size: 2rem;
     cursor: pointer;
 }
