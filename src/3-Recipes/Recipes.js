@@ -3,16 +3,17 @@ import { Link } from 'react-router-dom'
 import './recipes.css'
 import SavedRecipe from './SavedRecipe'
 import { useUserContext } from "../1-Auth/context/userContext";
+import { onSnapshot } from 'firebase/firestore';
 
 function Recipes() {
     const [savedRecipes, setSavedRecipes] = useState([])
     const [updateSavedRecipes, setUpdateSavedRecipes] = useState()
-    const { user } = useUserContext();
+    const { db, collection } = useUserContext()
 
     useEffect(() => {
-        fetch(`http://localhost:9293/recipes/${user.uid}`)
-        .then(r => r.json())
-        .then((recipeData) => setSavedRecipes(recipeData))
+        onSnapshot(collection(db, "recipes"), (snapshot) => {
+            setSavedRecipes(snapshot.docs.map((doc) => doc.data()))
+        })
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [updateSavedRecipes])
 

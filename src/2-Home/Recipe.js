@@ -5,7 +5,7 @@ import TimeIcon from '../Images/time_icon.png'
 import InfoIcon from '../Images/info_icon.png'
 
 function Recipe(recipe) {
-    const { db, collection, addDoc } = useUserContext()
+    const { user, db, collection, addDoc } = useUserContext()
     let timeArr = [15, 20, 30, 40, 45, 50, 60, 75]
 
     let recipeLabel = recipe.recipe.label
@@ -23,7 +23,8 @@ function Recipe(recipe) {
             ingredients: ingredients,
             recipeLabel: recipeLabel,
             recipeYield: recipeYield,
-            recipeImage: recipeImage
+            recipeImage: recipeImage,
+            userUID: user.uid,
         });
         console.log("Document written with ID: ", docRef.id);
         } catch (e) {

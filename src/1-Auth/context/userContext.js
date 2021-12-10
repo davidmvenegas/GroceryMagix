@@ -3,6 +3,7 @@ import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthState
 import { collection, addDoc } from "firebase/firestore";
 import { auth, db } from "./authIndex";
 
+
     export const UserContext = createContext({});
     export const useUserContext = () => {
         return useContext(UserContext);
@@ -32,10 +33,8 @@ import { auth, db } from "./authIndex";
         .then(() =>
             updateProfile(auth.currentUser, {
             displayName: name,
-            })
+            }),
         )
-        // Could return null - try Auth next
-        .then(() => db.collection('users').doc(user.uid))
         .catch((err) => setError(err.message))
         .finally(() => setLoading(false));
     };
