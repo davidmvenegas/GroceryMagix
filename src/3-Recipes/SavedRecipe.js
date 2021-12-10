@@ -1,13 +1,15 @@
 import React from 'react'
 import './savedrecipe.css'
+import { useUserContext } from "../1-Auth/context/userContext";
 import TrashIcon from '../Images/trash_icon.png'
 
 function SavedRecipe({recipe, setUpdateSavedRecipes}) {
-    let groceryCount = parseInt(recipe.ingredients).length
-    // let groceryCount = ((JSON.parse(recipe.ingredients) != null) ? JSON.parse(recipe.ingredients) : 0)
+    const { db, doc, deleteDoc } = useUserContext()
+    let groceryCount = recipe.ingredients.length
 
-    function handleDelete() {
-        
+    const handleDelete = async (recipe) => {
+        await deleteDoc(doc(db, "recipes", recipe))
+        await setUpdateSavedRecipes(Math.random())
     }
 
     return (
@@ -31,7 +33,7 @@ function SavedRecipe({recipe, setUpdateSavedRecipes}) {
                     <h2>GROCERIES: </h2>
                     <span>{groceryCount}</span>
                 </div>
-                <img onClick={handleDelete} src={TrashIcon} alt="trash_icon" />
+                <img onClick={() => handleDelete(recipe.id)} src={TrashIcon} alt="trash_icon" />
             </div>
         </div>
     )

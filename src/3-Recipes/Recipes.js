@@ -3,21 +3,37 @@ import { Link } from 'react-router-dom'
 import './recipes.css'
 import SavedRecipe from './SavedRecipe'
 import { useUserContext } from "../1-Auth/context/userContext";
-import { onSnapshot } from 'firebase/firestore';
+import HungryGif from '../Images/hungry_gif.gif'
 
-function Recipes() {
+function Recipes({updateSavedRecipes, setUpdateSavedRecipes}) {
     const [savedRecipes, setSavedRecipes] = useState([])
-    const [updateSavedRecipes, setUpdateSavedRecipes] = useState()
-    const { db, collection } = useUserContext()
+    const { db, collection, user, doc, getDocs, deleteDoc, query, where } = useUserContext()
 
     useEffect(() => {
-        onSnapshot(collection(db, "recipes"), (snapshot) => {
-            setSavedRecipes(snapshot.docs.map((doc) => doc.data()))
-        })
+        const queryRecipes = async () => {
+            const recipeRef = await collection(db, "recipes")
+                const q = await query(recipeRef, where("userUID", "==", user.uid))
+                const snapshot = await getDocs(q)
+                const results = snapshot.docs.map((doc) => ({ ...doc.data(), id:doc.id }))
+                setSavedRecipes(results)
+        }
+        queryRecipes()
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [updateSavedRecipes])
 
-    console.log(savedRecipes);
+        const handleDeleteAll = async () => {
+            const recipeRefs = collection(db, "recipes")
+            const q = query(recipeRefs, where("userUID", "==", user.uid))
+            const snapshot = await getDocs(q)
+            const results = snapshot.docs.map((doc) => ({ ...doc.data(), id:doc.id }))
+            results.forEach(async (result) => {
+                const docRef = doc(db, "recipes", result.id)
+                await deleteDoc(docRef)
+            })
+            setUpdateSavedRecipes(Math.random())
+        }
+
+    const totalGroceries = savedRecipes.reduce((count, recipe) => count + recipe.ingredients.length, 0);
 
     return (
         <div className="recipes-container">
@@ -26,19 +42,23 @@ function Recipes() {
                     <div className="recipes-header">
                         <div className="recipes-title-wrapper">
                             <h1>My Recipes</h1>
-                            <p id="recipes-remove-all">Remove all items</p>
+                            <p onClick={handleDeleteAll} id="recipes-remove-all">Remove all items</p>
                         </div>
                         <button><span>+</span><p>Create New List</p></button>
                     </div>
                         <div className="my-recipes-seperator"></div>
                             <div className="saved-recipe-wrapper">
-                            {savedRecipes.map((recipe) => {
-                                return <SavedRecipe recipe={recipe} setUpdateSavedRecipes={setUpdateSavedRecipes} />
-                            })}
+                                {totalGroceries === 0 && (<div className="find-recipes-message-wrapper">
+                                    <img src={HungryGif} alt="hungry_gif" />
+                                    <h1>Hungry? Start searching for recipes!</h1>
+                                </div>)}
+                                {savedRecipes.map((recipe) => {
+                                    return <SavedRecipe key={recipe.id} recipe={recipe} setUpdateSavedRecipes={setUpdateSavedRecipes} />
+                                })}
                             </div>
                         <div className="my-recipes-seperator"></div>
                     <div className="recipes-footer">
-                        <h1>Total Groceries: <span>13</span></h1>
+                        <h1>Total Groceries: </h1><span>{totalGroceries}</span>
                     </div>
                 </div>
                 <div className="recipes-box-2">

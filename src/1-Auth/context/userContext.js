@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile, sendPasswordResetEmail } from "firebase/auth";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, doc, addDoc, deleteDoc, getDocs, onSnapshot, query, where } from "firebase/firestore";
 import { auth, db } from "./authIndex";
 
 
@@ -9,7 +9,7 @@ import { auth, db } from "./authIndex";
         return useContext(UserContext);
     };
     export const UserContextProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState("Friend");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
@@ -59,8 +59,14 @@ import { auth, db } from "./authIndex";
         loading,
         error,
         db,
+        onSnapshot, 
+        query,
+        where,
         collection,
+        doc,
         addDoc,
+        getDocs,
+        deleteDoc,
         signInUser,
         registerUser,
         logoutUser,

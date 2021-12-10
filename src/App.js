@@ -14,7 +14,7 @@ function App() {
   const { loading, error, user } = useUserContext()
   let location = useLocation();
   const [input, setInput] = useState('chicken')
-
+  const [updateSavedRecipes, setUpdateSavedRecipes] = useState()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ function App() {
             <Route exact path="/" element={<Landing/>} />
             <Route path="/auth" element={<Auth loading={loading} error={error} user={user} />} />
             <Route path="/home" element={<Home input={input} handleSubmit={handleSubmit} />} />
-            <Route path="/recipes" element={<Recipes />} />
+            <Route path="/recipes" element={<Recipes updateSavedRecipes={updateSavedRecipes} setUpdateSavedRecipes={setUpdateSavedRecipes} />} />
             <Route path="/groceries" element={<Groceries/>} />
           </Routes>
           {((location.pathname === '/') || (location.pathname === '/auth')) ? null : <Footer/>}

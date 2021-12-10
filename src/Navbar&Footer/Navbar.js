@@ -1,13 +1,29 @@
-import { React} from 'react'
+import { React, useEffect, useState} from 'react'
 import './navbar.css'
 import { Link } from 'react-router-dom';
 import { useUserContext } from "../1-Auth/context/userContext";
 import DishIcon from '../Images/dish_icon.png'
 import SearchIcon from '../Images/search_icon.png'
 
-function Navbar({setInput, handleSubmit}) {
-    const { logoutUser, user } = useUserContext();
-    const greetUser = (user.displayName != null) ? user.displayName : "Friend"
+function Navbar({setInput, handleSubmit, updateSavedRecipes}) {
+    const { logoutUser, user, collection, db, query, where, getDocs } = useUserContext();
+    let [queryRecipeCount, setQueryRecipeCount] = useState([])
+
+    useEffect(() => {
+    const countRecipes = async () => {
+        const recipeRef = collection(db, "recipes")
+        const q = query(recipeRef, where("userUID", "==", user.uid))
+        const snapshot = await getDocs(q)
+        const results = snapshot.docs.map((doc) => ({ ...doc.data(), id:doc.id }))
+        setQueryRecipeCount(results)
+    }
+    countRecipes()
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, [updateSavedRecipes])
+
+console.log(queryRecipeCount);
+
+const recipeCount = queryRecipeCount.length
 
     return (
         <div className="navbar-container">
@@ -25,12 +41,12 @@ function Navbar({setInput, handleSubmit}) {
                     <Link to="/recipes">
                         <div className="navbar-recipes-box">
                             <img src={DishIcon} alt="dish_icon" />
-                            <p>0</p>
+                            <p>{recipeCount}</p>
                         </div>
                     </Link>
                 </div>
                 <div className="navbar-box-four">
-                <h1 className="navbar-user-greeting">Hello, <span>{greetUser}</span></h1>
+                <h1 className="navbar-user-greeting">Hello, <span>{user.displayName}</span></h1>
                     <Link to="/">
                         <button className="navbar-logout-button" onClick={logoutUser}>Log out</button>
                     </Link>

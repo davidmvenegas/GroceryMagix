@@ -26,13 +26,14 @@
     justify-content: space-between;
     flex-direction: column;
     height: 13.25vh;
-    width: 40vw;
+    width: 42.5vw;
+    margin-left: 1rem;
 }
 .recipes-content-2 h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-weight: 500;
     color: #444;
-    /* text-shadow: .15rem .15rem .15rem rgba(0, 0, 0, 0.2); */
+    text-shadow: .15rem .15rem .05rem rgba(0, 0, 0, 0.2);
 }
 .recipes-servings-wrapper {
     display: flex;
@@ -113,12 +114,12 @@
     display: flex;
 }
 .recipes-content-3 h2 {
-    padding-right: .5rem;
-    font-size: 2.15rem;
+    padding-right: 1rem;
+    font-size: 2rem;
     font-weight: 400;
 }
 .recipes-g-amount span {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 3rem;
     margin-top: -.55rem;
 }
