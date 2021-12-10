@@ -1,9 +1,22 @@
-import React from 'react'
+import {React, useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import './recipes.css'
 import SavedRecipe from './SavedRecipe'
+import { useUserContext } from "../1-Auth/context/userContext";
 
 function Recipes() {
+    const [savedRecipes, setSavedRecipes] = useState([])
+    const [updateSavedRecipes, setUpdateSavedRecipes] = useState()
+    const { user } = useUserContext();
+
+    useEffect(() => {
+        fetch(`http://localhost:9293/recipes/${user.uid}`)
+        .then(r => r.json())
+        .then((recipeData) => setSavedRecipes(recipeData))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [updateSavedRecipes])
+
+    console.log(savedRecipes);
 
     return (
         <div className="recipes-container">
@@ -18,11 +31,9 @@ function Recipes() {
                     </div>
                         <div className="my-recipes-seperator"></div>
                             <div className="saved-recipe-wrapper">
-                                <SavedRecipe />
-                                <SavedRecipe />
-                                <SavedRecipe />
-                                <SavedRecipe />
-                                <SavedRecipe />
+                            {savedRecipes.map((recipe) => {
+                                return <SavedRecipe recipe={recipe} setUpdateSavedRecipes={setUpdateSavedRecipes} />
+                            })}
                             </div>
                         <div className="my-recipes-seperator"></div>
                     <div className="recipes-footer">

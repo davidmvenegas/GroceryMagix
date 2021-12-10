@@ -26,10 +26,10 @@
     justify-content: space-between;
     flex-direction: column;
     height: 13.25vh;
-    margin-left: -25rem;
+    width: 40vw;
 }
 .recipes-content-2 h1 {
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: 500;
     color: #444;
     /* text-shadow: .15rem .15rem .15rem rgba(0, 0, 0, 0.2); */

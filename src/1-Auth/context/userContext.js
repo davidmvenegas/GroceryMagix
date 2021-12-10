@@ -33,7 +33,6 @@ import { auth } from "./authIndex";
             displayName: name,
             })
         )
-        .then((res) => console.log(res))
         .catch((err) => setError(err.message))
         .finally(() => setLoading(false));
     };
@@ -41,7 +40,6 @@ import { auth } from "./authIndex";
     const signInUser = (email, password) => {
         setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
-        .then((res) => console.log(res))
         .catch((err) => setError(err.message))
         .finally(() => setLoading(false));
     };
