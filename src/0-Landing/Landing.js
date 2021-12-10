@@ -1,36 +1,31 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import './landing.css'
+import { useUserContext } from "../1-Auth/context/userContext";
 
 
 function Landing() {
+    const { user } = useUserContext()
+    let loggedIn = user ? '/home' : '/auth'
+
     return (
         <div className="landing-container">
             <nav className="landing-header">
                 <h1 className="landing-header-title">Grocery Magi<span>x</span></h1>
                 <ul className="landing-header-list">
-                    <Link to="/home" class="landing-header-list-item1">Home</Link>
-                    <Link to="/auth" class="landing-header-list-item2">Sign Up</Link>
-                </ul>
-            </nav>
-            <div className="landing-content">
-                <div className="landing-content-bx1">
                     <span className="landing-content-bx1-header">
                         <span>2.3+ Million Recipes</span>
                         <img src="https://cdn-icons-png.flaticon.com/512/1261/1261163.png" alt="grocery_icon" />
                     </span>
+                </ul>
+            </nav>
+            <div className="landing-content">
+                <div className="landing-content-bx1">
                     <h1 className="landing-content-hero">
                         Technology is your only <span>unfair advantage</span>
                     </h1>
                     <p className="landing-content-hero-description">Save time with Grocery Magix by turning your favorite recipes into grocery lists in seconds</p>
-                    <div className="landing-content-hero-footer">
-                        <img src="https://cdn-icons-png.flaticon.com/512/134/134914.png" alt="chat_icon" />
-                        <div className="landing-content-hero-footer-description-wrapper">
-                            <div className="landing-content-hero-footer-description1">Need Inspiration?</div>
-                            <div className="landing-content-hero-footer-description2">Easily discuss with others</div>
-                            <div className="landing-content-hero-footer-description3">about their favorites</div>
-                        </div>
-                    </div>
+                    <Link to={loggedIn} class="landing-header-list-item2">Get Started</Link>
                 </div>
                 <div className="landing-content-bx2">
                     <div className="landing-content-bx2-main">

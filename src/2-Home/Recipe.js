@@ -1,45 +1,39 @@
-import {React, useState} from 'react'
-import { useUserContext } from "../1-Auth/context/userContext";
+import {React} from 'react'
+// import { useUserContext } from "../1-Auth/context/userContext";
 import './recipe.css'
 import TimeIcon from '../Images/time_icon.png'
 import InfoIcon from '../Images/info_icon.png'
 
 function Recipe(recipe) {
-    const { user } = useUserContext()
+    // const { user } = useUserContext()
     let timeArr = [15, 20, 30, 40, 45, 50, 60, 75]
-    const [recipeList, setRecipeList] = useState([])
-
-    function handleAddRecipe(newRecipe) {
-        setRecipeList([...recipeList, newRecipe]);
-        console.log(user);
-    }
+    // const [recipeList, setRecipeList] = useState([])
 
     let recipeLabel = recipe.recipe.label
     let ingredientLines = recipe.recipe.ingredientLines
-    let ingredients = recipe.recipe.ingredients
+    // let ingredients = recipe.recipe.ingredients
     let recipeCalories = recipe.recipe.calories
     let recipeYield = recipe.recipe.yield
     let recipeTime = recipe.recipe.totalTime
     let recipeLink = recipe.recipe.url
     let recipeImage = recipe.recipe.image
-    let firebaseID = user.uid
 
     function addRecipeInfo() {
-        fetch("http://localhost:9293/recipes", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                },
-            body: JSON.stringify({
-                title: recipeLabel,
-                url: recipeImage,
-                servings: recipeYield,
-                ingredients: ingredients,
-                recipeFirebaseID : firebaseID,
-            }),
-        })
-        .then((r) => r.json())
-        .then((newRecipe) => handleAddRecipe(newRecipe))
+        // fetch("http://localhost:9293/recipes", {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //         },
+        //     body: JSON.stringify({
+        //         title: recipeLabel,
+        //         url: recipeImage,
+        //         servings: recipeYield,
+        //         ingredients: ingredients,
+        //         recipeFirebaseID : firebaseID,
+        //     }),
+        // })
+        // .then((r) => r.json())
+        // .then((newRecipe) => setRecipeList([...recipeList, newRecipe]))
     }
 
     return (
