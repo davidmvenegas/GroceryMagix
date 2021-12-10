@@ -81,7 +81,7 @@ function Home({input, handleSubmit, handleAddRecipe}) {
                         return <Recipe key={recipe.recipe.uri} recipe={recipe.recipe} handleAddRecipe={handleAddRecipe} />
                     })}
                 </div>
-                <FontAwesomeIcon className="home-scroll-btn" style={isVisible ? {opacity : 1}: {opacity : 0}} onClick={scrollToTop} icon={faArrowCircleUp} />
+                <FontAwesomeIcon className="home-scroll-btn" style={isVisible ? {opacity : 1, pointerEvents: "all"} : {opacity : 0, pointerEvents: "none"}} onClick={scrollToTop} icon={faArrowCircleUp} />
             </div>
         </div>
     )

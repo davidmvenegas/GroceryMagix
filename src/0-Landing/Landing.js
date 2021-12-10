@@ -22,10 +22,10 @@ function Landing() {
             <div className="landing-content">
                 <div className="landing-content-bx1">
                     <h1 className="landing-content-hero">
-                        Technology is your only <span>unfair advantage</span>
+                        Build your shopping list faster with a <span>little magic</span>
                     </h1>
                     <p className="landing-content-hero-description">Save time with Grocery Magix by turning your favorite recipes into grocery lists in seconds</p>
-                    <Link to={loggedIn} class="landing-header-list-item2">Get Started</Link>
+                    <Link to={loggedIn} className="landing-header-list-item2">Get Started</Link>
                 </div>
                 <div className="landing-content-bx2">
                     <div className="landing-content-bx2-main">

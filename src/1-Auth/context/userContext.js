@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile, sendPasswordResetEmail } from "firebase/auth";
-import { auth } from "./authIndex";
+import { collection, addDoc } from "firebase/firestore";
+import { auth, db } from "./authIndex";
 
     export const UserContext = createContext({});
     export const useUserContext = () => {
@@ -33,6 +34,8 @@ import { auth } from "./authIndex";
             displayName: name,
             })
         )
+        // Could return null - try Auth next
+        .then(() => db.collection('users').doc(user.uid))
         .catch((err) => setError(err.message))
         .finally(() => setLoading(false));
     };
@@ -56,6 +59,9 @@ import { auth } from "./authIndex";
         user,
         loading,
         error,
+        db,
+        collection,
+        addDoc,
         signInUser,
         registerUser,
         logoutUser,

@@ -7,6 +7,7 @@ import SearchIcon from '../Images/search_icon.png'
 
 function Navbar({setInput, handleSubmit}) {
     const { logoutUser, user } = useUserContext();
+    const greetUser = (user.displayName != null) ? user.displayName : "Friend"
 
     return (
         <div className="navbar-container">
@@ -29,7 +30,7 @@ function Navbar({setInput, handleSubmit}) {
                     </Link>
                 </div>
                 <div className="navbar-box-four">
-                <h1 className="navbar-user-greeting">Hello, <span>{user.displayName}</span></h1>
+                <h1 className="navbar-user-greeting">Hello, <span>{greetUser}</span></h1>
                     <Link to="/">
                         <button className="navbar-logout-button" onClick={logoutUser}>Log out</button>
                     </Link>
