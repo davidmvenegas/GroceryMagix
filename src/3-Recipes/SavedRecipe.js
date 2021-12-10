@@ -2,19 +2,30 @@ import React from 'react'
 import './savedrecipe.css'
 import TrashIcon from '../Images/trash_icon.png'
 
-function SavedRecipe() {
+function SavedRecipe({recipe, setUpdateSavedRecipes}) {
+    let groceryCount = parseInt(recipe.ingredients).length
+    // let groceryCount = ((JSON.parse(recipe.ingredients) != null) ? JSON.parse(recipe.ingredients) : 0)
+
+    function handleDelete() {
+        fetch(`http://localhost:9293/recipes/${recipe.id}`, {
+            method: "DELETE",
+        })
+        .then((r) => r.json())
+        .then(() => setUpdateSavedRecipes(Math.random()))
+    }
+
     return (
         <div className="recipes-content">
             <div className="recipes-content-1">
-                <img src="https://d1uz88p17r663j.cloudfront.net/original/b829edd68c818352a26f754a8184e636_bak---02---libby_s-famous-pumpkin-pie-617_edit.jpg" alt="Recipe_Img" />
+                <img src={recipe.url} alt="Recipe_Img" />
             </div>
             <div className="recipes-content-2">
-                <h1>Perfect Pumpkin Pie</h1>
+                <h1>{recipe.title}</h1>
                 <div className="recipes-servings-wrapper">
                     <p>Servings:</p>
                     <div className="servings-btn-wrapper">
                         <button className="servings-btn-1">-</button>
-                        <div className="servings-btn-count">4</div>
+                        <div className="servings-btn-count">{recipe.servings}</div>
                         <button className="servings-btn-2">+</button>
                     </div>
                 </div>
@@ -22,9 +33,9 @@ function SavedRecipe() {
             <div className="recipes-content-3">
                 <div className="recipes-g-amount">
                     <h2>GROCERIES: </h2>
-                    <span>8</span>
+                    <span>{groceryCount}</span>
                 </div>
-                <img src={TrashIcon} alt="" />
+                <img onClick={handleDelete} src={TrashIcon} alt="trash_icon" />
             </div>
         </div>
     )

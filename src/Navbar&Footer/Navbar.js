@@ -1,18 +1,12 @@
 import { React} from 'react'
 import './navbar.css'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useUserContext } from "../1-Auth/context/userContext";
 import DishIcon from '../Images/dish_icon.png'
 import SearchIcon from '../Images/search_icon.png'
 
-function Navbar({setInput}) {
-    const navigate = useNavigate();
+function Navbar({setInput, handleSubmit}) {
     const { logoutUser } = useUserContext();
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        navigate('/home');
-    };
 
     return (
         <div className="navbar-container">
