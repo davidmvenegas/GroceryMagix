@@ -1,11 +1,14 @@
 import { React, useState, useEffect} from 'react'
 import axios from 'axios';
 import './home.css'
+import { useRecipeContext } from '../RecipeContext';
 import Recipe from './Recipe'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons"
 
-function Home({input, handleSubmit, handleAddRecipe}) {
+function Home({ handleAddRecipe }) {
+    console.log("HOME RERENDER");
+    const { input } = useRecipeContext()
     const [recipes, setRecipes] = useState([])
     const [isVisible, setIsVisible] = useState(false)
 
@@ -14,8 +17,9 @@ function Home({input, handleSubmit, handleAddRecipe}) {
         .then(res => {
             setRecipes(res.data.hits)
         })
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        }, [handleSubmit]);
+        console.log("fetching");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const toggleVisibility = () => (window.pageYOffset > 1250) ? setIsVisible(true) : setIsVisible(false)
     const scrollToTop = () => window.scrollTo({top:0, behavior:'smooth'})

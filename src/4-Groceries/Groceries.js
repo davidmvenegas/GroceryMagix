@@ -27,7 +27,7 @@ function Groceries() {
                 </div>
                 <div className="g-header-bx4">
                     <select className="g-select-box">
-                        <option disabled defaultValue hidden>Sort By</option>
+                        <option disabled selected hidden>Sort By</option>
                         <option id="g-select-option" value="amount">Amount</option>
                         <option id="g-select-option" value="alphabetical">A - Z</option>
                         <option id="g-select-option" value="category">Type</option>

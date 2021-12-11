@@ -4,11 +4,13 @@ import { collection, doc, addDoc, deleteDoc, getDocs, onSnapshot, query, where }
 import { auth, db } from "./authIndex";
 
 
-    export const UserContext = createContext({});
-    export const useUserContext = () => {
-        return useContext(UserContext);
-    };
-    export const UserContextProvider = ({ children }) => {
+export const useUserContext = () => {
+    return useContext(UserContext);
+};
+
+export const UserContext = createContext({});
+
+export const UserContextProvider = ({ children }) => {
     const [user, setUser] = useState("Friend");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");

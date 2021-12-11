@@ -2,11 +2,13 @@ import { React, useEffect, useState} from 'react'
 import './navbar.css'
 import { Link } from 'react-router-dom';
 import { useUserContext } from "../1-Auth/context/userContext";
+import { useRecipeContext } from '../RecipeContext';
 import DishIcon from '../Images/dish_icon.png'
 import SearchIcon from '../Images/search_icon.png'
 
-function Navbar({setInput, handleSubmit, updateSavedRecipes}) {
+function Navbar() {
     const { logoutUser, user, collection, db, query, where, getDocs } = useUserContext();
+    const { setInput, handleSubmit } = useRecipeContext()
     let [queryRecipeCount, setQueryRecipeCount] = useState([])
 
     useEffect(() => {
@@ -19,7 +21,7 @@ function Navbar({setInput, handleSubmit, updateSavedRecipes}) {
     }
     countRecipes()
 // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [updateSavedRecipes])
+}, [])
 
 console.log(queryRecipeCount);
 

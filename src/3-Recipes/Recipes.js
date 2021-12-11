@@ -1,13 +1,15 @@
 import {React, useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
+import { useUserContext } from "../1-Auth/context/userContext";
+import { useRecipeContext } from '../RecipeContext';
 import './recipes.css'
 import SavedRecipe from './SavedRecipe'
-import { useUserContext } from "../1-Auth/context/userContext";
 import HungryGif from '../Images/hungry_gif.gif'
 
-function Recipes({updateSavedRecipes, setUpdateSavedRecipes}) {
-    const [savedRecipes, setSavedRecipes] = useState([])
+function Recipes() {
     const { db, collection, user, doc, getDocs, deleteDoc, query, where } = useUserContext()
+    const { updateSavedRecipes, setUpdateSavedRecipes } = useRecipeContext()
+    const [savedRecipes, setSavedRecipes] = useState([])
 
     useEffect(() => {
         const queryRecipes = async () => {

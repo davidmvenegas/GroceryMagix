@@ -6,7 +6,7 @@ import InfoIcon from '../Images/info_icon.png'
 
 function Recipe(recipe) {
     const { user, db, collection, addDoc } = useUserContext()
-    let timeArr = [15, 20, 30, 40, 45, 50, 60, 75]
+    // let timeArr = [15, 20, 30, 40, 45, 50, 60, 75]
 
     let recipeLabel = recipe.recipe.label
     let ingredientLines = recipe.recipe.ingredientLines
@@ -42,7 +42,8 @@ function Recipe(recipe) {
                     <div className="home-recipe-card-seperator"></div>
                     <div className="home-recipe-card-details-time-container">
                         <img src={TimeIcon} alt="time_icon" />
-                        <p>{((recipeTime === 0) || (recipeTime > 300)) ? timeArr[Math.floor(Math.random() * timeArr.length)] : recipeTime} min</p>
+                        {/* <p>{((recipeTime === 0) || (recipeTime > 300)) ? timeArr[Math.floor(Math.random() * timeArr.length)] : recipeTime} min</p> */}
+                        <p>{recipeTime} min</p>
                     </div>
                     <div className="home-recipe-card-seperator"></div>
                     <p id="home-recipe-calories">{Math.trunc(recipeCalories/recipeYield)} Calories</p>
