@@ -53,7 +53,7 @@ function SavedRecipe({recipe}) {
                 <div className="recipes-servings-wrapper">
                     <p>Servings:</p>
                     <div className="servings-btn-wrapper">
-                        <button style={recipe.recipeYield < 2 ? {opacity : .5, backgroundColor: "#b8b8b8", pointerEvents: "none" } : {opacity : 1, pointerEvents: "all" }} onClick={decrementRecipe} className="servings-btn-1">-</button>
+                        <button style={recipe.recipeYield < 2 ? {opacity : .5, backgroundColor: "#ddd", pointerEvents: "none" } : {opacity : 1, pointerEvents: "all" }} onClick={decrementRecipe} className="servings-btn-1">-</button>
                         <div className="servings-btn-count">{recipe.recipeYield}</div>
                         <button onClick={increaseRecipe} className="servings-btn-2">+</button>
                     </div>

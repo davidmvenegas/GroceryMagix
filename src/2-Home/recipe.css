@@ -104,6 +104,20 @@ title {
 .home-recipe-card-add-btn:active {
     transform: scale(.975);
 }
+.home-recipe-card-add-btn-added {
+    position: absolute;
+    bottom: 1.35rem;
+    right: 21%;
+    height: 3.5rem;
+    width: 7.75rem;
+    background-color: #ff7300ee;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 7.5px;
+    border: none;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 700;
+}
 .home-recipe-card-image-wrapper {
     width: 30%;
     height: 16rem;

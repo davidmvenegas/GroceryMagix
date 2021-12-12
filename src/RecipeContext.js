@@ -17,13 +17,10 @@ export const RecipeContextProvider = ({ children }) => {
         e.preventDefault()
         navigate('/home')
         axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=cb497740&app_key=5230ca56100a7c424dbcd724d88fd3d8`)
-        .then(res => {
-            setRecipes(res.data.hits)
-        })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        .then(res => setRecipes(res.data.hits))
     }
 
-    const allRecipeValue = {
+    const allRecipeValues = {
         input,
         setInput,
         handleSubmit,
@@ -33,6 +30,6 @@ export const RecipeContextProvider = ({ children }) => {
     }
 
     return (
-        <allRecipeContext.Provider value={allRecipeValue}>{children}</allRecipeContext.Provider>
+        <allRecipeContext.Provider value={allRecipeValues}>{children}</allRecipeContext.Provider>
     )
 }

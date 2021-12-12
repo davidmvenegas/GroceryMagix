@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile, sendPasswordResetEmail } from "firebase/auth";
-import { collection, doc, addDoc, deleteDoc, getDocs, onSnapshot, query, where, updateDoc, increment } from "firebase/firestore";
+import { collection, doc, addDoc, deleteDoc, getDoc, getDocs, onSnapshot, query, where, updateDoc, increment } from "firebase/firestore";
 import { auth, db } from "./authIndex";
 
 
@@ -67,6 +67,7 @@ export const UserContextProvider = ({ children }) => {
         collection,
         doc,
         addDoc,
+        getDoc,
         getDocs,
         increment,
         deleteDoc,
