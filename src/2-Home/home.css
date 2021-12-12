@@ -58,3 +58,22 @@
 .home-scroll-btn:hover {
     transform: scale(1.05);
 }
+.home-display-messsage {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 50vw;
+}
+.home-display-messsage h1 {
+    font-size: 3.5rem;
+    font-weight: 200;
+    text-align: center;
+    opacity: .75;
+}
+.home-display-messsage img {
+    margin-top: 4.25rem;
+    height: 50vh;
+    opacity: .8;
+}

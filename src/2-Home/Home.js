@@ -1,11 +1,14 @@
 import { React, useState, useEffect} from 'react'
 import './home.css'
+import { useUserContext } from "../1-Auth/context/userContext";
 import { useRecipeContext } from '../RecipeContext';
 import Recipe from './Recipe'
+import FoodIcon from '../Images/make_icon.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons"
 
 function Home({ handleAddRecipe }) {
+    const { user } = useUserContext();
     const { recipes } = useRecipeContext()
     const [isVisible, setIsVisible] = useState(false)
     const toggleVisibility = () => (window.pageYOffset > 1250) ? setIsVisible(true) : setIsVisible(false)
@@ -68,7 +71,11 @@ function Home({ handleAddRecipe }) {
                     </ul>
                 </div>
                 <div className="home-center-container">
-                    {(recipes.length === 0) && <h1 className='home-display-messsage'>Welcome. To begin, search for meals you want to make</h1>}
+                    {(recipes.length === 0) &&
+                        <div className="home-display-messsage">
+                            <h1>Welcome{user.displayName != null && (" "+user.displayName)}. To begin, search for recipes you'd like to make </h1>
+                            <img src={FoodIcon} alt="food_icon"/>
+                        </div>}
                     {recipes.map((recipe) => {
                         return <Recipe key={recipe.recipe.uri} recipe={recipe.recipe} handleAddRecipe={handleAddRecipe} />
                     })}

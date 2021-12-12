@@ -9,7 +9,7 @@ export const allRecipeContext = createContext({});
 
 export const RecipeContextProvider = ({ children }) => {
     const navigate = useNavigate();
-    const [input, setInput] = useState('chicken')
+    const [input, setInput] = useState('')
     const [updateSavedRecipes, setUpdateSavedRecipes ] = useState()
     const [recipes, setRecipes] = useState([])
 

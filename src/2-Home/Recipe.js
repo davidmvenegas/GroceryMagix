@@ -25,6 +25,7 @@ function Recipe(recipe) {
             recipeLabel: recipeLabel,
             recipeYield: recipeYield,
             recipeImage: recipeImage,
+            recipeLink: recipeLink,
             userUID: user.uid,
         })
         setUpdateSavedRecipes(Math.random())

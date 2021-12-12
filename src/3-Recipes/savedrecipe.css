@@ -29,6 +29,13 @@
     width: 42.5vw;
     margin-left: 1rem;
 }
+.recipes-content-2-link {
+    text-decoration : none;
+    color: #444;
+}
+.recipes-content-2-link:hover {
+    text-decoration: underline;
+}
 .recipes-content-2-title {
     font-size: 2.6rem;
     font-weight: 500;
@@ -111,7 +118,7 @@
     margin-right: .35rem;
 }
 .recipes-g-amount {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
 }
 .recipes-content-3 h2 {
@@ -122,32 +129,59 @@
 .recipes-g-amount span {
     font-weight: 500;
     font-size: 3rem;
-    margin-top: -.55rem;
+    margin-top: -.75rem;
 }
 .recipes-g-dropdown {
-    border: 1px solid red;
     position: relative;
+}
+.recipes-g-dropdown p {
     font-size: 2rem;
     height: auto;
     width: auto;
     margin-right: .625rem;
 }
+.recipes-g-dropdown p:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
 .recipes-g-dropdown-wrapper {
-    border: 1px solid red;
+    display: none;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: .25rem .25rem .25rem rgba(0, 0, 0, 0.2);
+    color: #fff;
     position: absolute;
-    right: -1rem;
-    top: 3rem;
+    right: -4.75rem;
+    top: 2.5rem;
     width: 12.5rem;
+    border-radius: 1rem;
     height: auto;
+    z-index: 9999;
+    transition: all .2s ease-in-out;
 }
 .recipes-g-dropdown-content {
-    
+    padding: .75rem;
 }
 .recipes-g-dropdown-content ul {
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 1;
 }
 .recipes-g-dropdown-content li {
-    
+    opacity: 1;
+    text-transform: capitalize;
+    width: fit-content;
+    word-spacing: -.1rem;
+    margin: .125rem 0;
+    list-style: none;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: .125rem 0;
+    border-radius: .5rem;
+    /* background-color: hsl(215, 50%, 65%); */
 }
 .recipes-content-3 img {
     height: 3.5rem;
