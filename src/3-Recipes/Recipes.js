@@ -23,17 +23,17 @@ function Recipes() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [updateSavedRecipes])
 
-        const handleDeleteAll = async () => {
-            const recipeRefs = collection(db, "recipes")
-            const q = query(recipeRefs, where("userUID", "==", user.uid))
-            const snapshot = await getDocs(q)
-            const results = snapshot.docs.map((doc) => ({ ...doc.data(), id:doc.id }))
-            results.forEach(async (result) => {
-                const docRef = doc(db, "recipes", result.id)
-                await deleteDoc(docRef)
-            })
-            setUpdateSavedRecipes(Math.random())
-        }
+    const handleDeleteAll = async () => {
+        const recipeRefs = collection(db, "recipes")
+        const q = query(recipeRefs, where("userUID", "==", user.uid))
+        const snapshot = await getDocs(q)
+        const results = snapshot.docs.map((doc) => ({ ...doc.data(), id:doc.id }))
+        results.forEach(async (result) => {
+            const docRef = doc(db, "recipes", result.id)
+            await deleteDoc(docRef)
+        })
+        setUpdateSavedRecipes(Math.random())
+    }
 
     const totalGroceries = savedRecipes.reduce((count, recipe) => count + recipe.ingredients.length, 0);
 

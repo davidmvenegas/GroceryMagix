@@ -5,13 +5,37 @@ import { useRecipeContext } from '../RecipeContext';
 import TrashIcon from '../Images/trash_icon.png'
 
 function SavedRecipe({recipe}) {
-    const { db, doc, deleteDoc} = useUserContext()
+    const { db, doc, deleteDoc, updateDoc, increment } = useUserContext()
     const { setUpdateSavedRecipes } = useRecipeContext()
     let groceryCount = recipe.ingredients.length
     const [isDown, setIsDown] = useState(true)
 
     const handleDelete = async (recipe) => {
         await deleteDoc(doc(db, "recipes", recipe))
+        await setUpdateSavedRecipes(Math.random())
+    }
+
+    const incrementedIngredients = recipe.ingredients.map((hash) => {
+        return {...hash, quantity: (hash.quantity + (hash.quantity / recipe.recipeYield))}
+    })
+    const decrementedIngredients = recipe.ingredients.map((hash) => {
+        return {...hash, quantity: (hash.quantity - (hash.quantity / recipe.recipeYield))}
+    })
+
+    const increaseRecipe = async () => {
+        const recipeRef = doc(db, "recipes", recipe.id)
+        await updateDoc(recipeRef, {
+            recipeYield : increment(1),
+            ingredients : incrementedIngredients,
+        })
+        await setUpdateSavedRecipes(Math.random())
+    }
+    const decrementRecipe = async () => {
+        const recipeRef = doc(db, "recipes", recipe.id)
+        await updateDoc(recipeRef, {
+            recipeYield : increment(-1),
+            ingredients : decrementedIngredients,
+        })
         await setUpdateSavedRecipes(Math.random())
     }
 
@@ -29,22 +53,21 @@ function SavedRecipe({recipe}) {
                 <div className="recipes-servings-wrapper">
                     <p>Servings:</p>
                     <div className="servings-btn-wrapper">
-                        <button className="servings-btn-1">-</button>
+                        <button style={recipe.recipeYield < 2 ? {opacity : .5, backgroundColor: "#b8b8b8", pointerEvents: "none" } : {opacity : 1, pointerEvents: "all" }} onClick={decrementRecipe} className="servings-btn-1">-</button>
                         <div className="servings-btn-count">{recipe.recipeYield}</div>
-                        <button className="servings-btn-2">+</button>
+                        <button onClick={increaseRecipe} className="servings-btn-2">+</button>
                     </div>
                 </div>
             </div>
             <div className="recipes-content-3">
                 <div className="recipes-g-amount">
-                    
                     <div onClick={handleDropdown} className="recipes-g-dropdown">
                         <p>&#9432;</p>
                         <div style={isDown ? {display: "none", visibility: "hidden" } : {display: "block", visibility: "visible"}} className="recipes-g-dropdown-wrapper">
                             <div className="recipes-g-dropdown-content">
                                 <ul>
-                                    {recipe.ingredients.map((grocery) => (
-                                        <li>{grocery.food}</li>
+                                    {recipe.ingredients.map((grocery, i) => (
+                                        (i !== recipe.ingredients.length - 1) ? <li>{grocery.food}<br />•</li> : <li>{grocery.food}</li>
                                     ))}
                                 </ul>
                             </div>

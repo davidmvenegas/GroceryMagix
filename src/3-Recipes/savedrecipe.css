@@ -71,12 +71,6 @@
     border-radius: .25rem 0 0 .25rem;
     transition: all .1s ease;
 }
-.servings-btn-1:hover {
-    background-color: hsl(215, 100%, 87%);
-}
-.servings-btn-1:active {
-    background-color: hsl(215, 100%, 75%);
-}
 .servings-btn-count {
     height: 3.125rem;
     width: 4rem;
@@ -103,11 +97,17 @@
     border-radius: 0 .25rem .25rem 0;
     transition: all .1s ease;
 }
+.servings-btn-1:hover {
+    background-color: hsl(0, 50%, 87%);
+}
+.servings-btn-1:active {
+    background-color: hsl(0, 55%, 80%);
+}
 .servings-btn-2:hover {
-    background-color: hsl(215, 100%, 87%);
+    background-color: hsl(156, 50%, 87%);
 }
 .servings-btn-2:active {
-    background-color: hsl(215, 100%, 80%);
+    background-color: hsl(156, 55%, 75%);
 }
 .recipes-content-3 {
     display: flex;
@@ -147,20 +147,20 @@
 .recipes-g-dropdown-wrapper {
     display: none;
     visibility: hidden;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     box-shadow: .25rem .25rem .25rem rgba(0, 0, 0, 0.2);
     color: #fff;
     position: absolute;
-    right: -4.75rem;
+    right: -5.125rem;
     top: 2.5rem;
-    width: 12.5rem;
+    width: 13.5rem;
     border-radius: 1rem;
     height: auto;
-    z-index: 9999;
+    z-index: 10000;
     transition: all .2s ease-in-out;
 }
 .recipes-g-dropdown-content {
-    padding: .75rem;
+    padding: 1rem .75rem;
 }
 .recipes-g-dropdown-content ul {
     display: flex;
@@ -174,14 +174,13 @@
     text-transform: capitalize;
     width: fit-content;
     word-spacing: -.1rem;
-    margin: .125rem 0;
+    line-height: 1.25rem;
     list-style: none;
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 700;
     padding: .125rem 0;
     border-radius: .5rem;
-    /* background-color: hsl(215, 50%, 65%); */
 }
 .recipes-content-3 img {
     height: 3.5rem;

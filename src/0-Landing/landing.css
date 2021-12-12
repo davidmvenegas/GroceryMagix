@@ -35,7 +35,7 @@
     font-weight: 700;
     padding: 1.35rem;
     border-radius: .5rem;
-    margin-top: 3.65rem;
+    margin-top: 4rem;
 }
 .landing-header-list-item2:hover {
     background-color: #3B82F6;
@@ -49,6 +49,7 @@
 }
 .landing-content-bx1 {
     max-width: 30vw;
+    margin-top: 2rem;
 }
 .landing-content-bx1-header {
     display: flex;
@@ -61,7 +62,7 @@
 }
 .landing-content-bx1-header span {
     font-weight: 500;
-    font-size: 3.35rem;
+    font-size: 3.25rem;
     font-weight: 400;
     line-height: 2rem;
     letter-spacing: -.075rem;
@@ -90,7 +91,7 @@
 .landing-content-hero-description {
     padding-top: 2.85rem;
     font-size: 1.9rem;
-    max-width: 40rem;
+    max-width: 42.5rem;
     font-weight: 400;
     color: #4B5563;
     letter-spacing: -.025rem;
@@ -161,7 +162,7 @@
     justify-content: flex-end;
     margin-top: 3rem;
     font-weight: 700;
-    bottom: -7.5vh;
+    bottom: -10vh;
     right: 0;
 }
 .landing-content-bx2-footer-span1 {

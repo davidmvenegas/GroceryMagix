@@ -50,3 +50,10 @@
 //     queryRecipes()
 // // eslint-disable-next-line react-hooks/exhaustive-deps
 // }, [updateSavedRecipes])
+
+
+
+// MATH 
+
+// 'quantity': 'quantity'.value + ('quantity'.value / recipe.recipeYield)
+// (hash.quantity + (hash.quantity / recipe.recipeYield)).toFixed(1).replace(/[.,]0$/, "")
