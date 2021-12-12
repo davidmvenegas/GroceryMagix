@@ -7,11 +7,11 @@ import { UserContextProvider } from './1-Auth/context/userContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserContextProvider>
-      <HashRouter basename="/">
+    <HashRouter basename="/">
+      <UserContextProvider>
         <App />
-      </HashRouter>
-    </UserContextProvider>
+      </UserContextProvider>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

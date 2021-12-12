@@ -55,7 +55,7 @@ function Recipes() {
                                     <h1>Hungry? Start searching for recipes!</h1>
                                 </div>)}
                                 {savedRecipes.map((recipe) => {
-                                    return <SavedRecipe key={recipe.id} recipe={recipe} setUpdateSavedRecipes={setUpdateSavedRecipes} />
+                                    return <SavedRecipe key={recipe.id} recipe={recipe} />
                                 })}
                             </div>
                         <div className="my-recipes-seperator"></div>

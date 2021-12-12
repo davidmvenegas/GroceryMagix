@@ -1,5 +1,4 @@
 import { React, useState, useEffect} from 'react'
-import axios from 'axios';
 import './home.css'
 import { useRecipeContext } from '../RecipeContext';
 import Recipe from './Recipe'
@@ -7,23 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons"
 
 function Home({ handleAddRecipe }) {
-    console.log("HOME RERENDER");
-    const { input } = useRecipeContext()
-    const [recipes, setRecipes] = useState([])
+    const { recipes } = useRecipeContext()
     const [isVisible, setIsVisible] = useState(false)
-
-    useEffect(() => {
-        axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=cb497740&app_key=5230ca56100a7c424dbcd724d88fd3d8`)
-        .then(res => {
-            setRecipes(res.data.hits)
-        })
-        console.log("fetching");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
     const toggleVisibility = () => (window.pageYOffset > 1250) ? setIsVisible(true) : setIsVisible(false)
     const scrollToTop = () => window.scrollTo({top:0, behavior:'smooth'})
-    
+
     useEffect(() => {
         window.addEventListener('scroll', toggleVisibility)
         return () => window.removeEventListener('scroll', toggleVisibility)
@@ -81,6 +68,7 @@ function Home({ handleAddRecipe }) {
                     </ul>
                 </div>
                 <div className="home-center-container">
+                    {(recipes.length === 0) && <h1 className='home-display-messsage'>Welcome. To begin, search for meals you want to make</h1>}
                     {recipes.map((recipe) => {
                         return <Recipe key={recipe.recipe.uri} recipe={recipe.recipe} handleAddRecipe={handleAddRecipe} />
                     })}

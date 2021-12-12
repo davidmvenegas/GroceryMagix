@@ -8,24 +8,19 @@ import SearchIcon from '../Images/search_icon.png'
 
 function Navbar() {
     const { logoutUser, user, collection, db, query, where, getDocs } = useUserContext();
-    const { setInput, handleSubmit } = useRecipeContext()
-    let [queryRecipeCount, setQueryRecipeCount] = useState([])
+    const { setInput, handleSubmit, updateSavedRecipes } = useRecipeContext()
+    let [queryRecipeCount, setQueryRecipeCount] = useState()
 
     useEffect(() => {
     const countRecipes = async () => {
         const recipeRef = collection(db, "recipes")
         const q = query(recipeRef, where("userUID", "==", user.uid))
-        const snapshot = await getDocs(q)
-        const results = snapshot.docs.map((doc) => ({ ...doc.data(), id:doc.id }))
-        setQueryRecipeCount(results)
+        const querySnapshot = await getDocs(q)
+        setQueryRecipeCount(querySnapshot.size)
     }
     countRecipes()
-// eslint-disable-next-line react-hooks/exhaustive-deps
-}, [])
-
-console.log(queryRecipeCount);
-
-const recipeCount = queryRecipeCount.length
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [updateSavedRecipes])
 
     return (
         <div className="navbar-container">
@@ -43,7 +38,7 @@ const recipeCount = queryRecipeCount.length
                     <Link to="/recipes">
                         <div className="navbar-recipes-box">
                             <img src={DishIcon} alt="dish_icon" />
-                            <p>{recipeCount}</p>
+                            <p style={(queryRecipeCount > 9) ? {fontSize : "2.65rem", letterSpacing: "-.2rem", paddingRight: ".1rem"} : {fontSize : "3rem"}} >{queryRecipeCount}</p>
                         </div>
                     </Link>
                 </div>

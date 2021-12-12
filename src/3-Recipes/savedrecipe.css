@@ -29,7 +29,7 @@
     width: 42.5vw;
     margin-left: 1rem;
 }
-.recipes-content-2 h1 {
+.recipes-content-2-title {
     font-size: 2.6rem;
     font-weight: 500;
     color: #444;
@@ -111,17 +111,43 @@
     margin-right: .35rem;
 }
 .recipes-g-amount {
+    border: 1px solid red;
     display: flex;
 }
 .recipes-content-3 h2 {
     padding-right: 1rem;
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 500;
 }
 .recipes-g-amount span {
     font-weight: 500;
     font-size: 3rem;
     margin-top: -.55rem;
+}
+.recipes-g-dropdown {
+    border: 1px solid red;
+    position: relative;
+    font-size: 2rem;
+    height: auto;
+    width: auto;
+    margin-right: .625rem;
+}
+.recipes-g-dropdown-wrapper {
+    border: 1px solid red;
+    position: absolute;
+    right: -1rem;
+    top: 3rem;
+    width: 12.5rem;
+    height: auto;
+}
+.recipes-g-dropdown-content {
+    
+}
+.recipes-g-dropdown-content ul {
+    
+}
+.recipes-g-dropdown-content li {
+    
 }
 .recipes-content-3 img {
     height: 3.5rem;

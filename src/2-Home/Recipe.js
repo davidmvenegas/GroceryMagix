@@ -1,12 +1,13 @@
 import {React} from 'react'
 import { useUserContext } from "../1-Auth/context/userContext";
+import { useRecipeContext } from '../RecipeContext'
 import './recipe.css'
 import TimeIcon from '../Images/time_icon.png'
 import InfoIcon from '../Images/info_icon.png'
 
 function Recipe(recipe) {
     const { user, db, collection, addDoc } = useUserContext()
-    // let timeArr = [15, 20, 30, 40, 45, 50, 60, 75]
+    const { setUpdateSavedRecipes } = useRecipeContext()
 
     let recipeLabel = recipe.recipe.label
     let ingredientLines = recipe.recipe.ingredientLines
@@ -25,7 +26,8 @@ function Recipe(recipe) {
             recipeYield: recipeYield,
             recipeImage: recipeImage,
             userUID: user.uid,
-        });
+        })
+        setUpdateSavedRecipes(Math.random())
         console.log("Document written with ID: ", docRef.id);
         } catch (e) {
         console.error("Error adding document: ", e);
@@ -42,8 +44,8 @@ function Recipe(recipe) {
                     <div className="home-recipe-card-seperator"></div>
                     <div className="home-recipe-card-details-time-container">
                         <img src={TimeIcon} alt="time_icon" />
-                        {/* <p>{((recipeTime === 0) || (recipeTime > 300)) ? timeArr[Math.floor(Math.random() * timeArr.length)] : recipeTime} min</p> */}
-                        <p>{recipeTime} min</p>
+                        <p>{((recipeTime === 0) || (recipeTime > 300)) ? 25 : recipeTime} min</p>
+                        {/* <p>{recipeTime} min</p> */}
                     </div>
                     <div className="home-recipe-card-seperator"></div>
                     <p id="home-recipe-calories">{Math.trunc(recipeCalories/recipeYield)} Calories</p>
