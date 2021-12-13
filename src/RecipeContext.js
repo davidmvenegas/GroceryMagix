@@ -12,7 +12,6 @@ export const RecipeContextProvider = ({ children }) => {
     const [input, setInput] = useState('')
     const [updateSavedRecipes, setUpdateSavedRecipes ] = useState()
     const [recipes, setRecipes] = useState([]) 
-    const [reset, setReset] = useState([]) 
     const [healthFilters, setHealthFilters] = useState([])
     const [mealFilters, setMealFilters] = useState('')
     const [dishFilters, setDishFilters] = useState([])
@@ -26,13 +25,8 @@ export const RecipeContextProvider = ({ children }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         navigate('/home')
-        setReset(Math.random())
         axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=cb497740&app_key=5230ca56100a7c424dbcd724d88fd3d8${mealQuery}${healthQuery}${dishQuery}${cusineQuery}`.replace(/null|,/g, ""))
         .then(res => setRecipes(res.data.hits))
-        console.log(mealQuery);
-        console.log(healthQuery);
-        console.log(dishQuery);
-        console.log(cusineQuery);
     }
 
     const allRecipeValues = {
@@ -40,9 +34,11 @@ export const RecipeContextProvider = ({ children }) => {
         setInput,
         handleSubmit,
         recipes,
-        reset,
         updateSavedRecipes,
         setUpdateSavedRecipes,
+        healthFilters,
+        dishFilters,
+        cuisinesFilters,
         setHealthFilters,
         setMealFilters,
         setDishFilters,

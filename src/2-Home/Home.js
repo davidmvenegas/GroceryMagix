@@ -9,7 +9,7 @@ import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons"
 
 function Home({ handleAddRecipe }) {
     const { user } = useUserContext();
-    const { recipes, reset, setMealFilters, setHealthFilters, setDishFilters, setCuisinesFilters } = useRecipeContext()
+    const { recipes, setMealFilters, setHealthFilters, setDishFilters, setCuisinesFilters, healthFilters, dishFilters, cuisinesFilters } = useRecipeContext()
     const [isVisible, setIsVisible] = useState(false)
     const toggleVisibility = () => (window.pageYOffset > 1250) ? setIsVisible(true) : setIsVisible(false)
     const scrollToTop = () => window.scrollTo({top:0, behavior:'smooth'})
@@ -19,29 +19,20 @@ function Home({ handleAddRecipe }) {
         return () => window.removeEventListener('scroll', toggleVisibility)
     }, [])
 
-    useEffect(() => {
-        setMealFilters('')
-        setHealthFilters([])
-        setDishFilters([])
-        setCuisinesFilters([])
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [reset])
-
     const handleMealFilter = (item) => setMealFilters(item)
 
-    let healthFilterArr = []
-    let dishFilterArr = []
-    let cuisinesFilterArr = []
-
     const handleHealthFilter = (item) => {
+        let healthFilterArr = [...healthFilters]
         healthFilterArr.includes(item) ? healthFilterArr = healthFilterArr.filter((curItem) => curItem !== item) : healthFilterArr.push(item)
         setHealthFilters(healthFilterArr)
     }
     const handleDishFilter = (item) => {
+        let dishFilterArr = [...dishFilters]
         dishFilterArr.includes(item) ? dishFilterArr = dishFilterArr.filter((curItem) => curItem !== item) : dishFilterArr.push(item)
         setDishFilters(dishFilterArr)
     }
     const handleCuisineFilter = (item) => {
+        let cuisinesFilterArr = [...cuisinesFilters]
         cuisinesFilterArr.includes(item) ? cuisinesFilterArr = cuisinesFilterArr.filter((curItem) => curItem !== item) : cuisinesFilterArr.push(item)
         setCuisinesFilters(cuisinesFilterArr)
     }
