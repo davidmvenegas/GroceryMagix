@@ -43,7 +43,7 @@ function Navbar() {
                     </Link>
                 </div>
                 <div className="navbar-box-four">
-                <h1 className="navbar-user-greeting">Hello, <span>{user.displayName}</span></h1>
+                <h1 className="navbar-user-greeting">Hello<span>{user.displayName != null && (", "+user.displayName)}</span></h1>
                     <Link to="/">
                         <button className="navbar-logout-button" onClick={logoutUser}>Log out</button>
                     </Link>

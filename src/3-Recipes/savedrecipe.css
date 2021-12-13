@@ -118,7 +118,6 @@
     margin-right: .35rem;
 }
 .recipes-g-amount {
-    /* border: 1px solid red; */
     display: flex;
 }
 .recipes-content-3 h2 {
@@ -177,7 +176,7 @@
     line-height: 1.25rem;
     list-style: none;
     text-align: center;
-    font-size: 1.125rem;
+    font-size: 1.175rem;
     font-weight: 700;
     padding: .125rem 0;
     border-radius: .5rem;

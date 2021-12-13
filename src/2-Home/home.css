@@ -14,11 +14,35 @@
     justify-content: center;
     flex-direction: row;
 }
+.home-side-filter-title {
+    font-weight: 400;
+    color: #555;
+    width: max-content;
+    margin-bottom: 2.325rem;
+    padding-bottom: .275rem;
+    font-size: 1.65rem;
+    word-spacing: -.05rem;
+    letter-spacing: -.025rem;
+    border-bottom: 1px solid #999;
+    font-style: italic;
+}
+.home-side-clear-all {
+    text-decoration: underline;
+    font-size: 1.35rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #222;
+    width: fit-content;
+}
+.home-side-clear-all:hover {
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+}
 .home-side-container {
-    height: 135vh;
+    height: 140.65vh;
     width: 12.5%;
     margin: 5vh 3.5% 1.5vh 1.75%;
-    padding: 9vh 0;
+    padding: .35vh 1vw .35vh 0;
     border-right: 2px dotted #bbb;
 }
 .home-side-container ul {
@@ -26,19 +50,21 @@
 }
 .home-side-container h2 {
     font-size: 1.85rem;
+    margin-bottom: .65rem;
 }
-.home-side-container li {
+.home-side-container label {
     font-size: 1.6rem;
     padding: .175rem 0;
     list-style-type: none;
-    line-height: 2.5rem;
+    line-height: 2.65rem;
+    margin-left: .5rem;
 }
-.home-side-container li:hover {
+.home-side-container label:hover {
     cursor: pointer;
     color: #3586ff;
 }
 .home-center-container {
-    min-height: 150vh;
+    min-height: 147.5vh;
     width: 73.5%;
     display: flex;
     justify-content: flex-start;
@@ -50,10 +76,10 @@
 .home-scroll-btn {
     position: fixed;
     left: 13.5%;
-    bottom: 32.55%;
+    bottom: 38.35%;
     font-size: 5rem;
     cursor: pointer;
-    transition: opacity .3s ease, transform .25s ease;
+    transition: opacity .35s ease-in-out, transform .25s ease;
 }
 .home-scroll-btn:hover {
     transform: scale(1.05);
