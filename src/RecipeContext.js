@@ -11,20 +11,28 @@ export const RecipeContextProvider = ({ children }) => {
     const navigate = useNavigate();
     const [input, setInput] = useState('')
     const [updateSavedRecipes, setUpdateSavedRecipes ] = useState()
-    const [recipes, setRecipes] = useState([])
+    const [recipes, setRecipes] = useState([]) 
+    const [reset, setReset] = useState([]) 
     const [healthFilters, setHealthFilters] = useState([])
-    const [mealFilters, setMealFilters] = useState([])
+    const [mealFilters, setMealFilters] = useState('')
     const [dishFilters, setDishFilters] = useState([])
     const [cuisinesFilters, setCuisinesFilters] = useState([])
 
+    let mealQuery = (mealFilters === null || mealFilters.length === 0) ? null : `&mealType=${mealFilters}`
+    let healthQuery = healthFilters.length === 0 ? null : healthFilters.map((i) => `&health=${i}`)
+    let dishQuery = dishFilters.length === 0 ? null : dishFilters.map((i) => `&dishType=${i}`)
     let cusineQuery = cuisinesFilters.length === 0 ? null : cuisinesFilters.map((i) => `&cuisineType=${i}`)
 
     const handleSubmit = (e) => {
         e.preventDefault()
         navigate('/home')
-        axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=cb497740&app_key=5230ca56100a7c424dbcd724d88fd3d8${cusineQuery}`.replace(/null/g, ""))
+        setReset(Math.random())
+        axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=cb497740&app_key=5230ca56100a7c424dbcd724d88fd3d8${mealQuery}${healthQuery}${dishQuery}${cusineQuery}`.replace(/null|,/g, ""))
         .then(res => setRecipes(res.data.hits))
-        console.log(cuisinesFilters);
+        console.log(mealQuery);
+        console.log(healthQuery);
+        console.log(dishQuery);
+        console.log(cusineQuery);
     }
 
     const allRecipeValues = {
@@ -32,6 +40,7 @@ export const RecipeContextProvider = ({ children }) => {
         setInput,
         handleSubmit,
         recipes,
+        reset,
         updateSavedRecipes,
         setUpdateSavedRecipes,
         setHealthFilters,

@@ -39,6 +39,7 @@
 .recipes-content-2-title {
     font-size: 2.6rem;
     font-weight: 500;
+    line-height: 2.5rem;
     color: #444;
     text-shadow: .15rem .15rem .05rem rgba(0, 0, 0, 0.2);
 }

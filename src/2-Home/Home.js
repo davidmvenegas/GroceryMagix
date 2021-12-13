@@ -9,7 +9,7 @@ import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons"
 
 function Home({ handleAddRecipe }) {
     const { user } = useUserContext();
-    const { recipes, setMealFilters, setHealthFilters, setDishFilters, setCuisinesFilters } = useRecipeContext()
+    const { recipes, reset, setMealFilters, setHealthFilters, setDishFilters, setCuisinesFilters } = useRecipeContext()
     const [isVisible, setIsVisible] = useState(false)
     const toggleVisibility = () => (window.pageYOffset > 1250) ? setIsVisible(true) : setIsVisible(false)
     const scrollToTop = () => window.scrollTo({top:0, behavior:'smooth'})
@@ -19,15 +19,20 @@ function Home({ handleAddRecipe }) {
         return () => window.removeEventListener('scroll', toggleVisibility)
     }, [])
 
+    useEffect(() => {
+        setMealFilters('')
+        setHealthFilters([])
+        setDishFilters([])
+        setCuisinesFilters([])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [reset])
+
+    const handleMealFilter = (item) => setMealFilters(item)
+
     let healthFilterArr = []
-    let mealFilterArr = []
     let dishFilterArr = []
     let cuisinesFilterArr = []
 
-    const handleMealFilter = (item) => {
-        mealFilterArr = [item]
-        setMealFilters(mealFilterArr)
-    }
     const handleHealthFilter = (item) => {
         healthFilterArr.includes(item) ? healthFilterArr = healthFilterArr.filter((curItem) => curItem !== item) : healthFilterArr.push(item)
         setHealthFilters(healthFilterArr)
@@ -39,7 +44,6 @@ function Home({ handleAddRecipe }) {
     const handleCuisineFilter = (item) => {
         cuisinesFilterArr.includes(item) ? cuisinesFilterArr = cuisinesFilterArr.filter((curItem) => curItem !== item) : cuisinesFilterArr.push(item)
         setCuisinesFilters(cuisinesFilterArr)
-        console.log(cuisinesFilterArr);
     }
 
     function handleUnselectAll() {
@@ -47,14 +51,10 @@ function Home({ handleAddRecipe }) {
         const allButton = document.querySelector("#allMeals")
         checkBoxes.forEach((box) => box.checked = false)
         allButton.checked = true
-        healthFilterArr = []
-        dishFilterArr = []
-        cuisinesFilterArr = []
-        mealFilterArr = []
-        setMealFilters(mealFilterArr)
-        setHealthFilters(healthFilterArr)
-        setDishFilters(dishFilterArr)
-        setCuisinesFilters(cuisinesFilterArr)
+        setMealFilters('')
+        setHealthFilters([])
+        setDishFilters([])
+        setCuisinesFilters([])
     }
 
     return (
