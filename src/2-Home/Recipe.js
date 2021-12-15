@@ -40,7 +40,7 @@ function Recipe(recipe) {
     return (
         <div className="home-recipe-card">
             <div className="home-recipe-card-text-container">
-                <h1 className="home-recipe-card-title">{recipeLabel}</h1>
+                <h1 className="home-recipe-card-title">{recipeLabel.length < 55 ? recipeLabel : recipeLabel.slice(0, 55)+"..."}</h1>
                 <p className="home-recipe-card-description">{ingredientLines.join(" • ").slice(0, 180)+"..."}</p>
                 <div className="home-recipe-card-details">
                     <p>Serves {recipeYield}</p>

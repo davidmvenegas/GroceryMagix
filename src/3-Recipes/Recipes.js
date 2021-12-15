@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom'
 import { useUserContext } from "../1-Auth/context/userContext";
 import { useRecipeContext } from '../RecipeContext';
 import './recipes.css'
+import ReactCardFlip from 'react-card-flip';
 import SavedRecipe from './SavedRecipe'
 import HungryGif from '../Images/hungry_gif.gif'
+import RedXIcon from '../Images/red_x_icon.png'
+import RightArrow from '../Images/arrow_right.png'
 
 function Recipes() {
     const { db, collection, user, doc, getDocs, deleteDoc, query, where } = useUserContext()
     const { updateSavedRecipes, setUpdateSavedRecipes } = useRecipeContext()
     const [savedRecipes, setSavedRecipes] = useState([])
+    const [isFlipped, setIsFlipped] = useState(false)
 
     useEffect(() => {
         const queryRecipes = async () => {
@@ -35,6 +39,17 @@ function Recipes() {
         setUpdateSavedRecipes(Math.random())
     }
 
+    function handleFlip() {
+        const textBox = document.getElementById("focusText")
+        if (isFlipped) {
+            textBox.blur()
+            textBox.value = ""
+        } else {
+            textBox.focus()
+        } 
+        setIsFlipped(!isFlipped)
+    }
+
     const totalGroceries = savedRecipes.reduce((count, recipe) => count + recipe.ingredients.length, 0);
 
     return (
@@ -46,7 +61,18 @@ function Recipes() {
                             <h1>My Recipes</h1>
                             <p onClick={handleDeleteAll} id="recipes-remove-all">Remove all items</p>
                         </div>
-                        <button><span>+</span><p>Create New List</p></button>
+                        <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
+                            <button className="recipe-flip-button-front" onClick={handleFlip}><span className="recipe-flip-front-plus">+</span><p className="recipe-flip-front-title">Create New List</p></button>
+                            <button className="recipe-flip-button-back">
+                                    <form className="recipe-flip-text-form">
+                                    <img className="recipe-flip-text-cancel" onClick={handleFlip} src={RedXIcon} alt='thin_x' />
+                                        <input className="recipe-flip-text-input" id="focusText" type="text" />
+                                    </form>
+                                    <div className="recipe-flip-text-submit-wrapper">
+                                        <img className="recipe-flip-text-submit" src={RightArrow} alt="right_arrow" />
+                                    </div>
+                            </button>
+                        </ReactCardFlip>
                     </div>
                         <div className="my-recipes-seperator"></div>
                             <div className="saved-recipe-wrapper">
