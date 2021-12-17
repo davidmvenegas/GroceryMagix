@@ -191,7 +191,7 @@
     padding: 1.15rem 0 0 3.5rem;
 }
 .recipes-shopping-lists-title {
-    font-size: 2.25rem;
+    font-size: 2.175rem;
     font-weight: 600;
 }
 .recipes-shopping-list-wrapper span {
@@ -215,8 +215,9 @@
     border: 1px solid black;
     font-size: 2.25rem;
     font-weight: 400;
+    max-width: 18rem;
     margin: 1.5rem 0;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     border-radius: .75rem;
     color: #222;
     background-color: rgba(255, 255, 255, 0.5);
@@ -234,7 +235,7 @@
     height: 3rem;
     width: 3rem;
     right: .25rem;
-    top: .825rem;
+    top: .75rem;
     border-radius: 50%;
     font-size: 1.5rem;
     font-weight: 600;
