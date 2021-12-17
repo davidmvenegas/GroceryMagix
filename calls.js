@@ -53,6 +53,21 @@
 
 
 
+// COUNT_CALL
+
+// useEffect(() => {
+//     const countRecipes = async () => {
+//         const recipeRef = await collection(db, "recipes")
+//         const q = await query(recipeRef, where("userUID", "==", user.uid))
+//         const querySnapshot = await getDocs(q)
+//         setQueryRecipeCount(querySnapshot.size)
+//     }
+//     countRecipes()
+//     // eslint-disable-next-line react-hooks/exhaustive-deps
+// }, [updateSavedRecipes])
+
+
+
 // MATH 
 
 // 'quantity': 'quantity'.value + ('quantity'.value / recipe.recipeYield)

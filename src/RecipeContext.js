@@ -11,7 +11,9 @@ export const RecipeContextProvider = ({ children }) => {
     const navigate = useNavigate();
     const [input, setInput] = useState('')
     const [updateSavedRecipes, setUpdateSavedRecipes ] = useState()
-    const [recipes, setRecipes] = useState([]) 
+    const [recipes, setRecipes] = useState([])
+    const [savedRecipes, setSavedRecipes] = useState([])
+    const [savedGroceries, setSavedGroceries] = useState([])
     const [healthFilters, setHealthFilters] = useState([])
     const [mealFilters, setMealFilters] = useState('')
     const [dishFilters, setDishFilters] = useState([])
@@ -34,6 +36,10 @@ export const RecipeContextProvider = ({ children }) => {
         setInput,
         handleSubmit,
         recipes,
+        savedRecipes, 
+        setSavedRecipes, 
+        savedGroceries, 
+        setSavedGroceries,
         updateSavedRecipes,
         setUpdateSavedRecipes,
         healthFilters,

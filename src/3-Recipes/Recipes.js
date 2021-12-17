@@ -8,12 +8,13 @@ import SavedRecipe from './SavedRecipe'
 import HungryGif from '../Images/hungry_gif.gif'
 import RedXIcon from '../Images/red_x_icon.png'
 import RightArrow from '../Images/arrow_right.png'
+import TrashIcon from '../Images/trash_icon.png'
 
 function Recipes() {
-    const { db, collection, user, doc, getDocs, deleteDoc, query, where } = useUserContext()
-    const { updateSavedRecipes, setUpdateSavedRecipes } = useRecipeContext()
-    const [savedRecipes, setSavedRecipes] = useState([])
+    const { db, collection, user, doc, addDoc, getDocs, deleteDoc, query, where } = useUserContext()
+    const { updateSavedRecipes, setUpdateSavedRecipes, savedRecipes, setSavedRecipes, savedGroceries, setSavedGroceries } = useRecipeContext()
     const [isFlipped, setIsFlipped] = useState(false)
+    const [listName, setListName] = useState('')
 
     useEffect(() => {
         const queryRecipes = async () => {
@@ -23,20 +24,46 @@ function Recipes() {
                 const results = snapshot.docs.map((doc) => ({ ...doc.data(), id:doc.id }))
                 setSavedRecipes(results)
         }
+        const queryGroceries = async () => {
+            const recipeRef = await collection(db, "groceries")
+                const q = await query(recipeRef, where("userUID", "==", user.uid))
+                const snapshot = await getDocs(q)
+                const results = snapshot.docs.map((doc) => ({ ...doc.data(), id:doc.id }))
+                setSavedGroceries(results)
+        }
         queryRecipes()
+        queryGroceries()
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [updateSavedRecipes])
 
     const handleDeleteAll = async () => {
-        const recipeRefs = collection(db, "recipes")
-        const q = query(recipeRefs, where("userUID", "==", user.uid))
+        const recipeRefs = await collection(db, "recipes")
+        const q = await query(recipeRefs, where("userUID", "==", user.uid))
         const snapshot = await getDocs(q)
         const results = snapshot.docs.map((doc) => ({ ...doc.data(), id:doc.id }))
         results.forEach(async (result) => {
-            const docRef = doc(db, "recipes", result.id)
+            const docRef = await doc(db, "recipes", result.id)
             await deleteDoc(docRef)
         })
         setUpdateSavedRecipes(Math.random())
+    }
+
+    async function createGroceryList() {
+        try {
+        const docRef = await addDoc(collection(db, "groceries"), {
+            listName: listName,
+            savedRecipes: savedRecipes,
+            userUID: user.uid,
+        });
+        console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+        console.error("Error adding document: ", e);
+        }
+    }
+
+    const deleteGroceryList = async (list) => {
+        await deleteDoc(doc(db, "groceries", list))
+        await setUpdateSavedRecipes(Math.random())
     }
 
     function handleFlip() {
@@ -48,6 +75,17 @@ function Recipes() {
             textBox.focus()
         } 
         setIsFlipped(!isFlipped)
+    }
+
+    function handleChange(e) {
+        setListName(e.target.value)
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        createGroceryList()
+        handleDeleteAll()
+        handleFlip()
     }
 
     const totalGroceries = savedRecipes.reduce((count, recipe) => count + recipe.ingredients.length, 0);
@@ -64,13 +102,13 @@ function Recipes() {
                         <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
                             <button className="recipe-flip-button-front" onClick={handleFlip}><span className="recipe-flip-front-plus">+</span><p className="recipe-flip-front-title">Create New List</p></button>
                             <button className="recipe-flip-button-back">
-                                    <form className="recipe-flip-text-form">
-                                    <img className="recipe-flip-text-cancel" onClick={handleFlip} src={RedXIcon} alt='thin_x' />
-                                        <input className="recipe-flip-text-input" id="focusText" type="text" />
+                                    <img className="recipe-flip-text-cancel" onClick={handleFlip} src={RedXIcon} alt='thin_x'/>
+                                    <form className="recipe-flip-text-form" onSubmit={handleSubmit}>
+                                        <input className="recipe-flip-text-input" id="focusText" type="text" placeholder='Name your list...' onChange={handleChange} required/>
+                                        <button className="recipe-flip-text-submit-wrapper" type="submit">
+                                            <img className="recipe-flip-text-submit" src={RightArrow} alt="right_arrow" />
+                                        </button>
                                     </form>
-                                    <div className="recipe-flip-text-submit-wrapper">
-                                        <img className="recipe-flip-text-submit" src={RightArrow} alt="right_arrow" />
-                                    </div>
                             </button>
                         </ReactCardFlip>
                     </div>
@@ -94,11 +132,14 @@ function Recipes() {
                         <h1 className="recipes-shopping-lists-title">Shopping Lists (<span>5</span>)</h1>
                         <div className="recipes-shopping-lists-content-seperator"></div>
                         <div className="recipes-shopping-lists-container">
-                            <Link id="recipes-list-item" to='/groceries'><h1>Week 1</h1></Link>
-                            <h1>Week 2</h1>
-                            <h1>Week 3</h1>
-                            <h1>Week 4</h1>
-                            <h1>Week 5</h1>
+                            {savedGroceries.map((list) => (
+                                <div id='recipes-list-item-wrapper'>
+                                    <img id='recipes-list-item-delete' onClick={() => deleteGroceryList(list.id)} src={TrashIcon} alt="trash_icon" />
+                                    <Link id='recipes-list-item' to='/groceries' state={{list : list}}>
+                                        <h1>{list.listName}</h1>
+                                    </Link>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import './groceries.css'
 import Grocery from './Grocery'
 import GroceryRecipe from './GroceryRecipe'
@@ -8,6 +9,8 @@ import CartIcon from '../Images/cart_icon.png'
 
 function Groceries() {
     const navigate = useNavigate();
+    const location = useLocation()
+    const { list } = location.state
 
     function navigateBack() {
         navigate('/recipes')
@@ -20,7 +23,7 @@ function Groceries() {
                     <button className="g-back-btn" onClick={navigateBack}>Back</button>
                 </div>
                 <div className="g-header-bx2">
-                    <h1 className="g-title">Shopping List #1</h1>
+                    <h1 className="g-title">{list.listName}</h1>
                 </div>
                 <div className="g-header-bx3">
                     <img className="g-copy-icon" src={CopyIcon} alt="copy_icon" />
