@@ -138,7 +138,7 @@
     width: 75vw;
     margin-left: 12.5vw;
     margin-top: 2.5vh;
-    height: 40vh;
+    min-height: 40vh;
 }
 .g-body-bx1 {
     flex: 1;
@@ -183,6 +183,7 @@
     height: fit-content;
     margin-top: -.75rem;
     border-left: .1rem solid #292929;
+    margin-bottom: 15rem;
 }
 .g-body-grocery-header {
     display: flex;
@@ -247,8 +248,8 @@
 .g-body-grocery-content {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     width: 100%;
-    margin: 2rem 0;
+    margin: 2rem 0 0;
 }
