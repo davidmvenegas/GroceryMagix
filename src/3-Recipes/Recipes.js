@@ -54,8 +54,12 @@ function Recipes() {
         let groceriesById = []
         let allGroceries = savedRecipes.map(recipe => recipe.ingredients).flat()
         allGroceries.forEach((grocery) => {
-            if (holder.hasOwnProperty(grocery.foodId)) {
+            if ((holder.hasOwnProperty(grocery.foodId)) && (holder[grocery.quantity] !== null)) {
                 holder[grocery.foodId] = holder[grocery.foodId] += grocery.quantity
+            } else if ((holder.hasOwnProperty(grocery.foodId)) && (holder[grocery.quantity] === null)) {
+                holder[grocery.foodId] = holder[grocery.foodId] += 0
+            } else if ((holder.hasOwnProperty(grocery.foodId) === false) && grocery.quantity === null) {
+                holder[grocery.foodId] = 0
             } else {
                 holder[grocery.foodId] = grocery.quantity
             }
@@ -121,7 +125,7 @@ function Recipes() {
                             <button className="recipe-flip-button-back">
                                     <img className="recipe-flip-text-cancel" onClick={handleFlip} src={RedXIcon} alt='thin_x'/>
                                     <form className="recipe-flip-text-form" onSubmit={handleSubmit}>
-                                        <input className="recipe-flip-text-input" maxLength="16" id="focusText" type="text" placeholder='Name your list...' onChange={handleChange} required/>
+                                        <input className="recipe-flip-text-input" maxLength="20" id="focusText" type="text" placeholder='Name your list...' onChange={handleChange} required/>
                                         <button className="recipe-flip-text-submit-wrapper" type="submit">
                                             <img className="recipe-flip-text-submit" src={RightArrow} alt="right_arrow" />
                                         </button>
@@ -153,7 +157,7 @@ function Recipes() {
                                 <div id='recipes-list-item-wrapper'>
                                     <img id='recipes-list-item-delete' onClick={() => deleteGroceryList(list.id)} src={TrashIcon} alt="trash_icon" />
                                     <Link id='recipes-list-item' to='/groceries' state={{list : list}}>
-                                        <h1 style={list.listName.length > 10 ? {fontSize: '1.85rem'} : {fontSize: '2.25rem'}}>{list.listName}</h1>
+                                        <h1 style={list.listName.length > 12 ? {fontSize: '1.85rem'} : {fontSize: '2.25rem'}}>{list.listName}</h1>
                                     </Link>
                                 </div>
                             ))}

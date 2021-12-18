@@ -43,7 +43,10 @@
 }
 .g-title {
     font-size: 4rem;
-    font-weight: 600;    
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    width: 33vw;
 }
 .g-header-bx3 {
     width: 12%;

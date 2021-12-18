@@ -36,6 +36,12 @@ function Grocery({ groceryById, allGroceries }) {
         case "box":
             typeMeasurement = 'Boxes';
             break;
+        case "pinch":
+            typeMeasurement = 'Pinches';
+            break;
+        case "half":
+            typeMeasurement = 'Halves';
+            break;
         case null:
             typeMeasurement = null;
             break;
@@ -43,7 +49,7 @@ function Grocery({ groceryById, allGroceries }) {
             typeMeasurement = measurement + "s";
     }
 
-    console.log(food);
+    // console.log(food);
     return (
         <div className="g-body-grocery-item">
             <div className="g-body-grocery-item-bx1">
