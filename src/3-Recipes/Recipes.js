@@ -30,7 +30,6 @@ function Recipes() {
                 const snapshot = await getDocs(q)
                 const results = snapshot.docs.map((doc) => ({ ...doc.data(), id:doc.id }))
                 setSavedGroceries(results)
-                console.log(savedGroceries);
         }
         queryRecipes()
         queryGroceries()
@@ -101,7 +100,7 @@ function Recipes() {
                             <p onClick={handleDeleteAll} id="recipes-remove-all">Remove all items</p>
                         </div>
                         <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-                            <button style={savedRecipes.length > 0 ? {pointerEvents: "all"} : {pointerEvents: "none", opacity: ".5" }} className="recipe-flip-button-front" onClick={handleFlip}><span className="recipe-flip-front-plus">+</span><p className="recipe-flip-front-title">Create New List</p></button>
+                            <button style={savedRecipes.length > 0 ? {pointerEvents: "all"} : {pointerEvents: "none", backgroundColor: "#bbb" }} className="recipe-flip-button-front" onClick={handleFlip}><span className="recipe-flip-front-plus">+</span><p className="recipe-flip-front-title">Create New List</p></button>
                             <button className="recipe-flip-button-back">
                                     <img className="recipe-flip-text-cancel" onClick={handleFlip} src={RedXIcon} alt='thin_x'/>
                                     <form className="recipe-flip-text-form" onSubmit={handleSubmit}>

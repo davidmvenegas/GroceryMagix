@@ -121,7 +121,7 @@
 .recipe-flip-text-input::placeholder {
     color: black;
     opacity: .5;
-    font-size: 2.125rem;
+    font-size: 2rem;
     letter-spacing: -.025rem;
     word-spacing: -.075rem;
 }
@@ -235,7 +235,7 @@
     height: 3rem;
     width: 3rem;
     right: .25rem;
-    top: .75rem;
+    top: .825rem;
     border-radius: 50%;
     font-size: 1.5rem;
     font-weight: 600;

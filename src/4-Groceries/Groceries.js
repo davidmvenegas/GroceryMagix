@@ -11,11 +11,29 @@ function Groceries() {
     const navigate = useNavigate();
     const location = useLocation()
     const { list } = location.state
+    const recipes = list.savedRecipes
+    let holder = {};
+    let groceriesById = [];
 
     function navigateBack() {
         navigate('/recipes')
     }
 
+    const allGroceries = recipes.map(recipe => recipe.ingredients).flat()
+    
+    allGroceries.forEach((grocery) => {
+        if (holder.hasOwnProperty(grocery.foodId)) {
+            holder[grocery.foodId] = holder[grocery.foodId] += grocery.quantity
+        } else {
+            holder[grocery.foodId] = grocery.quantity
+        }
+    })
+
+    for (let item in holder) {
+        groceriesById.push({food: item, amount: holder[item]})
+    }
+
+    console.log(allGroceries)
     return (
         <div className="groceries-container">
             <div className="g-header">
@@ -38,7 +56,7 @@ function Groceries() {
                 </div>
                 <div className="g-header-bx5">
                     <div className="g-cart-wrapper">
-                        <span>13</span>
+                        <span>{groceriesById.length}</span>
                         <img className="g-cart-icon" src={CartIcon} alt="cart_icon" />
                     </div>
                 </div>
@@ -46,9 +64,9 @@ function Groceries() {
             <div className="g-seperator"></div>
             <div className="g-body">
                 <div className="g-body-bx1">
-                    <GroceryRecipe />
-                    <GroceryRecipe />
-                    <GroceryRecipe />
+                    {recipes.map((recipe) => {
+                        return <GroceryRecipe key={recipe.id} recipe={recipe} />
+                    })}
                 </div>
                 <div className="g-body-seperator"></div>
                 <div className="g-body-bx2">
