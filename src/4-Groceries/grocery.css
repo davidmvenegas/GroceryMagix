@@ -42,16 +42,7 @@
     text-transform: capitalize;
 }
 .g-body-grocery-item-amount {
-    margin-left: 1rem;
+    margin: 0 2.5rem 0 1rem;
     font-size: 2.25rem;
     font-weight: 500;
-}
-.g-body-grocery-item-delete {
-    margin: 0 1.5rem 0 3.5rem;
-    height: 2.625rem;
-    transition: all .25s ease-in-out;
-}
-.g-body-grocery-item-delete:hover {
-    transform: rotate(180deg);
-    cursor: pointer;
 }

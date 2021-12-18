@@ -1,8 +1,7 @@
 import React from 'react'
 import './grocery.css'
-import DeleteIcon from '../Images/delete_icon.jpeg'
 
-function Grocery({ groceryById, allGroceries }) {
+function Grocery({ groceryById, allGroceries, list }) {
     let food = allGroceries.find(item => item.foodId === groceryById.food);
     let curAmount = groceryById.amount
     let measurement = food.measure
@@ -49,7 +48,6 @@ function Grocery({ groceryById, allGroceries }) {
             typeMeasurement = measurement + "s";
     }
 
-    // console.log(food);
     return (
         <div className="g-body-grocery-item">
             <div className="g-body-grocery-item-bx1">
@@ -58,9 +56,8 @@ function Grocery({ groceryById, allGroceries }) {
                 <h1 className="g-body-grocery-item-title">{name}</h1>
             </div>
             <div className="g-body-grocery-item-bx2">
-                {typeMeasurement === null ? <div className="g-body-grocery-item-measurement">Season To Taste</div> : <><div className="g-body-grocery-item-measurement">{typeMeasurement} :</div>
+                {typeMeasurement === null ? <div style={{marginRight: "2.5rem"}} className="g-body-grocery-item-measurement">Season To Taste</div> : <><div className="g-body-grocery-item-measurement">{typeMeasurement} :</div>
                 <div className="g-body-grocery-item-amount">{curAmount}</div></>}
-                <img className="g-body-grocery-item-delete" src={DeleteIcon} alt="delete_icon" />
             </div>
         </div>
     )

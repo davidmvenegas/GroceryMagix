@@ -110,6 +110,8 @@ function Groceries() {
 
     function handleSortByType() {
         let groceryTypes = []
+        let holder = {}
+        let finalHolder = []
         groceriesById.forEach((groceryById) => {
             let food = allGroceries.find(item => item.foodId === groceryById.food)
             let type = food.foodCategory
@@ -125,12 +127,22 @@ function Groceries() {
                     correctType = 3
                     break;
                 default:
-                    correctType = 100
+                    correctType = 9
                     break;
             }
-            groceryTypes.push(correctType)
+            groceryTypes.push({foodId: food.foodId, foodType: correctType})
         })
-        console.log(groceryTypes);
+        let sortedResult = groceryTypes.sort((a, b) => (a.foodType > b.foodType) ? 1 : -1)
+        sortedResult.forEach((grocery) => {
+            let correctFood = allGroceries.find(item => item.foodId === grocery.foodId)
+            let correctId = correctFood.foodId
+            let minimizedGrocery = groceriesById.find(item => item.food === correctId)
+            holder[correctId] = minimizedGrocery.amount
+        })
+        for (let item in holder) {
+            finalHolder.push({food: item, amount: holder[item]})
+        }
+        setSortedList(finalHolder)
     }
 
     return (
@@ -196,7 +208,7 @@ function Groceries() {
                     </div>
                     <div className="g-body-grocery-content">
                         {sortedList.map((groceryById) => {
-                            return <Grocery key={groceriesById.food} groceryById={groceryById} allGroceries={allGroceries} />
+                            return <Grocery key={groceriesById.food} groceryById={groceryById} allGroceries={allGroceries} list={list.id} />
                         })}
                     </div>
                 </div>
