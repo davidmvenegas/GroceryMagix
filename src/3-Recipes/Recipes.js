@@ -49,10 +49,27 @@ function Recipes() {
     }
 
     async function createGroceryList() {
+        // GROCERY LIST REDUCER //
+        let holder = {}
+        let groceriesById = []
+        let allGroceries = savedRecipes.map(recipe => recipe.ingredients).flat()
+        allGroceries.forEach((grocery) => {
+            if (holder.hasOwnProperty(grocery.foodId)) {
+                holder[grocery.foodId] = holder[grocery.foodId] += grocery.quantity
+            } else {
+                holder[grocery.foodId] = grocery.quantity
+            }
+        })
+        for (let item in holder) {
+            groceriesById.push({food: item, amount: holder[item]})
+        }
+        // ^ GROCERY LIST REDUCER ^ //
         try {
         const docRef = await addDoc(collection(db, "groceries"), {
             listName: listName,
             savedRecipes: savedRecipes,
+            groceriesById: groceriesById,
+            allGroceries: allGroceries,
             userUID: user.uid,
         });
         console.log("Document written with ID: ", docRef.id);
@@ -104,7 +121,7 @@ function Recipes() {
                             <button className="recipe-flip-button-back">
                                     <img className="recipe-flip-text-cancel" onClick={handleFlip} src={RedXIcon} alt='thin_x'/>
                                     <form className="recipe-flip-text-form" onSubmit={handleSubmit}>
-                                        <input className="recipe-flip-text-input" maxLength="12" id="focusText" type="text" placeholder='Name your list...' onChange={handleChange} required/>
+                                        <input className="recipe-flip-text-input" maxLength="16" id="focusText" type="text" placeholder='Name your list...' onChange={handleChange} required/>
                                         <button className="recipe-flip-text-submit-wrapper" type="submit">
                                             <img className="recipe-flip-text-submit" src={RightArrow} alt="right_arrow" />
                                         </button>

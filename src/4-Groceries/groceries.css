@@ -83,7 +83,7 @@
     border: none;
     outline: none;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     cursor: pointer;
     box-sizing: border-box;
@@ -94,7 +94,7 @@
     transition: all .15s ease;
 }
 .g-select-box:hover {
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 #g-select-option {
     font-size: 2rem;
@@ -118,7 +118,7 @@
 .g-cart-wrapper span {
     position: absolute;
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 5.75rem;
     margin-left: .5rem;
 }
@@ -140,33 +140,6 @@
     margin-top: 2.5vh;
     min-height: 40vh;
 }
-.g-body-bx1 {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    margin-right: -10vw;
-    margin-top: 1rem;
-}
-.g-body-recipe-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row-reverse;
-    margin: .5rem 0;
-}
-.g-body-recipe-wrapper h1 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin: 0 1rem;
-}
-.g-body-recipe-wrapper img {
-    height: 5rem;
-    width: auto;
-    border-radius: .35rem;
-    border: .2rem solid #353535;
-}
 .g-body-seperator {
     height: 100%;
     width: .15rem;
@@ -182,8 +155,8 @@
     flex-direction: column;
     height: fit-content;
     margin-top: -.75rem;
-    border-left: .1rem solid #292929;
     margin-bottom: 15rem;
+    border-left: .1rem solid #292929;
 }
 .g-body-grocery-header {
     display: flex;
@@ -209,8 +182,8 @@
 }
 .g-body-grocery-item-type {
     margin-right: .5rem;
-    height: 1.25rem;
-    width: 1.25rem;
+    height: 1.5rem;
+    width: 1.5rem;
     background-color: #888;
     border-radius: 50%;
     border: .2rem solid #555;
@@ -232,7 +205,7 @@
 }
 .g-body-grocery-header-remove-all {
     text-transform: uppercase;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #222;
     padding-left: .25rem;

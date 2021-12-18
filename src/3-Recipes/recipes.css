@@ -224,7 +224,7 @@
 }
 .recipes-shopping-lists-container h1:hover {
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.65);
     cursor: pointer;
 }
 #recipes-list-item {
@@ -234,7 +234,7 @@
     position: absolute;
     height: 3rem;
     width: 3rem;
-    right: .25rem;
+    right: .5rem;
     top: .825rem;
     border-radius: 50%;
     font-size: 1.5rem;
@@ -246,7 +246,7 @@
     transition: all .1s ease;
 }
 #recipes-list-item-delete:hover {
-    transform: scale(1.1);
+    transform: scale(1.075);
 }
 #recipes-list-item-delete:active {
     transform: scale(.95);

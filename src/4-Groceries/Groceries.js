@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import './groceries.css'
@@ -12,32 +12,15 @@ function Groceries() {
     const location = useLocation()
     const { list } = location.state
     const recipes = list.savedRecipes
-    const [savedGroceriesById, setSavedGroceriesById] = useState([])
-    let holder = {}
+    const allGroceries = list.allGroceries
+    const groceriesById = list.groceriesById
     
     function navigateBack() {
         navigate('/recipes')
     }
-    
-    recipes.map(recipe => recipe.ingredients).flat().forEach((grocery) => {
-        if (holder.hasOwnProperty(grocery.foodId)) {
-            holder[grocery.foodId] = holder[grocery.foodId] += grocery.quantity
-        } else {
-            holder[grocery.foodId] = grocery.quantity
-        }
-    })
-    
-    useEffect(() => {
-        let groceriesById = []
-        for (let item in holder) {
-            groceriesById.push({food: item, amount: holder[item]})
-        }
-        setSavedGroceriesById(groceriesById)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
 
+    console.log(allGroceries);
 
-    console.log(savedGroceriesById)
     return (
         <div className="groceries-container">
             <div className="g-header">
@@ -60,7 +43,7 @@ function Groceries() {
                 </div>
                 <div className="g-header-bx5">
                     <div className="g-cart-wrapper">
-                        <span>{savedGroceriesById.length}</span>
+                        <span>{groceriesById.length}</span>
                         <img className="g-cart-icon" src={CartIcon} alt="cart_icon" />
                     </div>
                 </div>
@@ -97,11 +80,11 @@ function Groceries() {
                                 Oils & Spices
                             </div>
                         </div>
-                        <div className="g-body-grocery-header-remove-all">Remove All Items</div>
+                        <div className="g-body-grocery-header-remove-all">Delete List</div>
                     </div>
                     <div className="g-body-grocery-content">
-                        {savedGroceriesById.map((groceryById) => {
-                            return <Grocery groceryById={groceryById} />
+                        {groceriesById.map((groceryById) => {
+                            return <Grocery groceryById={groceryById} allGroceries={allGroceries} />
                         })}
                     </div>
                 </div>
