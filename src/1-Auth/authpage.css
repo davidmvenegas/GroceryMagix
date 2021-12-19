@@ -86,9 +86,33 @@
     line-height: 1;
     letter-spacing: -.05rem;
     position: absolute;
-    top: 5rem;
+    top: 7.5vh;
+    cursor: pointer;
 }
 .landing-header-title-auth span {
     color: #3B82F6;
     font-weight: 700;
+}
+.secured-statement-wrapper {
+    position: absolute;
+    bottom: 7.5vh;
+}
+.secured-statement-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.35rem;
+    color: #444;
+}
+.secured-statement-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1rem;
+}
+.secured-statement-image-wrapper img {
+    height: 2.5rem;
+}
+.secured-statement-image-wrapper span {
+    font-size: 2rem;
+    color: #444;
 }

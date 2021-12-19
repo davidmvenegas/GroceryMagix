@@ -27,6 +27,7 @@
     font-weight: 800;
     color: #111;
     letter-spacing: -.05rem;
+    cursor: pointer;
 }
 .navbar-logo span {
     color: #3586ff;

@@ -1,12 +1,13 @@
 import { React, useEffect, useState} from 'react'
 import './navbar.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useUserContext } from "../1-Auth/context/userContext";
 import { useRecipeContext } from '../RecipeContext';
 import DishIcon from '../Images/dish_icon.png'
 import SearchIcon from '../Images/search_icon.png'
 
 function Navbar() {
+    const navigate = useNavigate();
     const { logoutUser, user, collection, db, query, where, getDocs } = useUserContext();
     const { setInput, handleSubmit, updateSavedRecipes } = useRecipeContext()
     let [queryRecipeCount, setQueryRecipeCount] = useState()
@@ -29,7 +30,7 @@ function Navbar() {
         <div className="navbar-container">
             <div className="navbar-wrapper">
                 <div className="navbar-box-one">
-                    <h1 className="navbar-logo" to="/">Grocery Magi<span>x</span></h1>
+                    <h1 className="navbar-logo" onClick={() => navigate('/home')}>Grocery Magi<span>x</span></h1>
                 </div>
                 <div className="navbar-box-two">
                     <form className="navbar-search" onSubmit={handleSubmit}>
