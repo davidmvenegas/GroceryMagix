@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './landing.css'
 import { useUserContext } from "../1-Auth/context/userContext";
+import Sparkle from 'react-sparkle'
 
 
 function Landing() {
@@ -10,6 +11,7 @@ function Landing() {
 
     return (
         <div className="landing-container">
+            <Sparkle flickerSpeed={'slowest'} fadeOutSpeed={15} minSize={5} maxSize={20} overflowPx={100} />
             <nav className="landing-header">
                 <h1 className="landing-header-title">Grocery Magi<span>x</span></h1>
                 <ul className="landing-header-list">

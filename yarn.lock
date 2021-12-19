@@ -1878,6 +1878,11 @@
     "@types/yargs" "^16.0.0"
     "chalk" "^4.0.0"
 
+"@juggle/resize-observer@^3.3.1":
+  "integrity" "sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw=="
+  "resolved" "https://registry.npmjs.org/@juggle/resize-observer/-/resize-observer-3.3.1.tgz"
+  "version" "3.3.1"
+
 "@nodelib/fs.scandir@2.1.4":
   "integrity" "sha512-33g3pMJk3bg5nXbL/+CY6I2eJDzZAni49PfJnL5fghPTggPvBd/pFNSgJsdAgWptuFu7qq/ERvOYFlhvsLTCKA=="
   "resolved" "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.4.tgz"
@@ -9978,7 +9983,14 @@
   optionalDependencies:
     "fsevents" "^2.1.3"
 
-"react@*", "react@^17.0.1", "react@^17.0.2", "react@>= 16", "react@>=16.8", "react@>=16.x", "react@17.0.2":
+"react-sparkle@^1.0.9":
+  "integrity" "sha512-MDRn+yaSf9PatEXJlNSqR9UHSj7jNa1bjJA5v9LQCIxP/k/fLWWwnRNv9QnNeKcELsYyeQgkTf4LTLaCccyzqQ=="
+  "resolved" "https://registry.npmjs.org/react-sparkle/-/react-sparkle-1.0.9.tgz"
+  "version" "1.0.9"
+  dependencies:
+    "@juggle/resize-observer" "^3.3.1"
+
+"react@*", "react@^17.0.1", "react@^17.0.2", "react@>= 16", "react@>=16.8", "react@>=16.8.0 <18", "react@>=16.x", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
