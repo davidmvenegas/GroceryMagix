@@ -13,14 +13,17 @@ function Navbar() {
 
     useEffect(() => {
     const countRecipes = async () => {
-        const recipeRef = collection(db, "recipes")
-        const q = query(recipeRef, where("userUID", "==", user.uid))
-        const querySnapshot = await getDocs(q)
-        setQueryRecipeCount(querySnapshot.size)
+        try {
+            const recipeRef = collection(db, "recipes")
+            const q = query(recipeRef, where("userUID", "==", user.uid))
+            const querySnapshot = await getDocs(q)
+            setQueryRecipeCount(querySnapshot.size)
+        } catch (e) {
+        console.error("Error adding document: ", e);
+        }
     }
     countRecipes()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [updateSavedRecipes])
+}, [collection, db, getDocs, query, updateSavedRecipes, user.uid, where])
 
     return (
         <div className="navbar-container">

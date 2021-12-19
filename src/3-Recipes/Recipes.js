@@ -18,23 +18,30 @@ function Recipes() {
 
     useEffect(() => {
         const queryRecipes = async () => {
+            try {
             const recipeRef = await collection(db, "recipes")
                 const q = await query(recipeRef, where("userUID", "==", user.uid))
                 const snapshot = await getDocs(q)
                 const results = snapshot.docs.map((doc) => ({ ...doc.data(), id:doc.id }))
                 setSavedRecipes(results)
+            } catch(e) {
+                console.error("Error adding document: ", e)
+            }
         }
         const queryGroceries = async () => {
+            try {
             const recipeRef = await collection(db, "groceries")
                 const q = await query(recipeRef, where("userUID", "==", user.uid))
                 const snapshot = await getDocs(q)
                 const results = snapshot.docs.map((doc) => ({ ...doc.data(), id:doc.id }))
                 setSavedGroceries(results)
+            } catch(e) {
+                console.error("Error adding document: ", e)
+            }
         }
         queryRecipes()
         queryGroceries()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [updateSavedRecipes])
+    }, [collection, db, getDocs, query, setSavedGroceries, setSavedRecipes, updateSavedRecipes, user.uid, where])
 
     const handleDeleteAll = async () => {
         const recipeRefs = await collection(db, "recipes")
