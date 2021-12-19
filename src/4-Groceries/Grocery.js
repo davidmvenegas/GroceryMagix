@@ -126,6 +126,10 @@ function Grocery({ groceryById, allGroceries, list }) {
             typeMeasurement = measurement + "s";
     }
 
+    function isInt(n) {
+        return n % 1 === 0
+    }
+
     return (
         <div className="g-body-grocery-item">
             <div className="g-body-grocery-item-bx1">
@@ -135,10 +139,12 @@ function Grocery({ groceryById, allGroceries, list }) {
             </div>
             <div className="g-body-grocery-item-bx2">
                 {typeMeasurement === null ? <div style={{marginRight: "2.5rem"}} className="g-body-grocery-item-measurement">Season To Taste</div> : <><div className="g-body-grocery-item-measurement">{typeMeasurement} :</div>
-                <div className="g-body-grocery-item-amount">{curAmount}</div></>}
+                <div className="g-body-grocery-item-amount">{(isInt(curAmount)) ? curAmount : ((curAmount.toString().split('.')[1].length > 2) ? (curAmount.toFixed(2)) : (curAmount.toFixed(1)))}</div></>}
             </div>
         </div>
     )
 }
 
 export default Grocery
+
+// .split('.')[1].length
