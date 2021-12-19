@@ -7,7 +7,7 @@ import { UserContextProvider } from './1-Auth/context/userContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter basename="/">
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <UserContextProvider>
         <App />
       </UserContextProvider>
