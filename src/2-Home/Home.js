@@ -46,6 +46,7 @@ function Home({ handleAddRecipe }) {
         setHealthFilters([])
         setDishFilters([])
         setCuisinesFilters([])
+        setTimeout(scrollToTop, 100)
     }
 
     return (

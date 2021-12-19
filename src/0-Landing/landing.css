@@ -35,7 +35,7 @@
     font-weight: 700;
     padding: 1.4rem 1.35rem;
     border-radius: .5rem;
-    margin-top: 4.125rem;
+    margin-top: 3.65rem;
 }
 .landing-header-list-item2:hover {
     background-color: #3B82F6;
@@ -49,7 +49,6 @@
 }
 .landing-content-bx1 {
     max-width: 30vw;
-    margin-top: 1rem;
 }
 .landing-content-bx1-header {
     display: flex;
@@ -89,8 +88,8 @@
     color: #2285ff;
 }
 .landing-content-hero-description {
-    padding-top: 2.75rem;
-    font-size: 1.9rem;
+    padding-top: 2.5rem;
+    font-size: 1.85rem;
     max-width: 42.5rem;
     font-weight: 400;
     color: #4B5563;

@@ -9,6 +9,7 @@ import Home from "./2-Home/Home"
 import Recipes from "./3-Recipes/Recipes"
 import Groceries from "./4-Groceries/Groceries"
 import Footer from "./Navbar&Footer/Footer"
+import Exit from './0-Landing/Exit'
 
 function App() {
   const { loading, error, user } = useUserContext()
@@ -17,15 +18,16 @@ function App() {
   return (
     <Fragment>
       <RecipeContextProvider>
-        {((location.pathname === '/') || (location.pathname === '/auth')) ? null : <Navbar />}
+        {((location.pathname === '/') || (location.pathname === '/auth') || (location.pathname === '/exit')) ? null : <Navbar />}
           <Routes>
             <Route exact path="/" element={<Landing/>} />
             <Route path="/auth" element={<Auth loading={loading} error={error} user={user} />} />
             <Route path="/home" element={<Home />} />
             <Route path="/recipes" element={<Recipes />} />
             <Route path="/groceries" element={<Groceries/>} />
+            <Route path="/exit" element={<Exit/>} />
           </Routes>
-        {((location.pathname === '/') || (location.pathname === '/auth')) ? null : <Footer/>}
+        {((location.pathname === '/') || (location.pathname === '/auth') || (location.pathname === '/exit')) ? null : <Footer/>}
       </RecipeContextProvider>
     </Fragment>
   );

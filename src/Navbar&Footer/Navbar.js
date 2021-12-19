@@ -44,7 +44,7 @@ function Navbar() {
                 </div>
                 <div className="navbar-box-four">
                 <h1 className="navbar-user-greeting">Hello, <span>{user.displayName != null && (user.displayName)}</span></h1>
-                    <Link to="/">
+                    <Link to="/exit">
                         <button className="navbar-logout-button" onClick={logoutUser}>Log out</button>
                     </Link>
                 </div>
