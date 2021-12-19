@@ -24,6 +24,84 @@ function Grocery({ groceryById, allGroceries, list }) {
         case "Condiments and sauces":
             typeBackgroundColor = '#c8b6ff';
             break;
+        case "condiments and sauces":
+            typeBackgroundColor = '#c8b6ff';
+            break;
+        case "meats":
+            typeBackgroundColor = '#ee6055';
+            break;
+        case "vegetables":
+            typeBackgroundColor = '#2dc653';
+            break;
+        case "bread, rolls and tortillas":
+            typeBackgroundColor = 'wheat';
+            break;
+        case "Cheese":
+            typeBackgroundColor = '#48bfe3';
+            break;
+        case "Poultry":
+            typeBackgroundColor = '#ee6055';
+            break;
+        case "Oils":
+            typeBackgroundColor = '#c8b6ff';
+            break;
+        case "canned soup":
+            typeBackgroundColor = '#ee6055';
+            break;
+        case "wines":
+            typeBackgroundColor = '#c8b6ff';
+            break;
+        case "cured meats":
+            typeBackgroundColor = '#ee6055';
+            break;
+        case "canned vegetables":
+            typeBackgroundColor = '#2dc653';
+            break;
+        case "quick breads and pastries":
+            typeBackgroundColor = 'wheat';
+            break;
+        case "sugars":
+            typeBackgroundColor = '#c8b6ff';
+            break;
+        case "pastries":
+            typeBackgroundColor = 'wheat';
+            break;
+        case "plant-based protein":
+            typeBackgroundColor = '#2dc653';
+            break;
+        case "candy":
+            typeBackgroundColor = '#c8b6ff';
+            break;
+        case "chocolate":
+            typeBackgroundColor = '#c8b6ff';
+            break;
+        case "sugar syrups":
+            typeBackgroundColor = '#c8b6ff';
+            break;
+        case "ready-to-eat cereals":
+            typeBackgroundColor = 'wheat';
+            break;
+        case "seafood":
+            typeBackgroundColor = '#ee6055';
+            break;
+        case "Cured meats":
+            typeBackgroundColor = '#ee6055';
+            break;
+        case "sugar jam":
+            typeBackgroundColor = '#c8b6ff';
+            break;
+        case "Eggs":
+            typeBackgroundColor = '#48bfe3';
+            break;
+        case "yogurt":
+            typeBackgroundColor = '#48bfe3';
+            break;
+        case "milk":
+            typeBackgroundColor = '#48bfe3';
+            break;
+        case "water":
+            typeBackgroundColor = '#3F37C9';
+            break;
         default:
             typeBackgroundColor = '#888';
     }

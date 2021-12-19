@@ -9,7 +9,7 @@ import CopyIcon from '../Images/copy_icon.png'
 import CartIcon from '../Images/cart_icon.png'
 
 function Groceries() {
-    const { db, doc, updateDoc } = useUserContext()
+    const { db, doc, updateDoc, deleteDoc } = useUserContext()
     const navigate = useNavigate();
     const location = useLocation()
     const { list } = location.state
@@ -121,10 +121,91 @@ function Groceries() {
                     correctType = 1
                     break;
                 case "grains":
-                    correctType = 2
+                    correctType = 4
                     break;
                 case "Dairy":
                     correctType = 3
+                    break;
+                case "Condiments and sauces":
+                    correctType = 5;
+                    break;
+                case "condiments and sauces":
+                    correctType = 5;
+                    break;
+                case "meats":
+                    correctType = 2;
+                    break;
+                case "vegetables":
+                    correctType = 1;
+                    break;
+                case "bread, rolls and tortillas":
+                    correctType = 4;
+                    break;
+                case "Cheese":
+                    correctType = 3;
+                    break;
+                case "Poultry":
+                    correctType = 2;
+                    break;
+                case "Oils":
+                    correctType = 5;
+                    break;
+                case "canned soup":
+                    correctType = 2;
+                    break;
+                case "wines":
+                    correctType = 5;
+                    break;
+                case "cured meats":
+                    correctType = 2;
+                    break;
+                case "canned vegetables":
+                    correctType = 1;
+                    break;
+                case "quick breads and pastries":
+                    correctType = 4;
+                    break;
+                case "sugars":
+                    correctType = 5;
+                    break;
+                case "pastries":
+                    correctType = 4;
+                    break;
+                case "plant-based protein":
+                    correctType = 1;
+                    break;
+                case "candy":
+                    correctType = 5;
+                    break;
+                case "chocolate":
+                    correctType = 5;
+                    break;
+                case "sugar syrups":
+                    correctType = 5;
+                    break;
+                case "ready-to-eat cereals":
+                    correctType = 4;
+                    break;
+                case "water":
+                    correctType = 6;
+                    break;
+                case "seafood":
+                    correctType = 2;
+                    break;
+                case "Cured meats":
+                    correctType = 2;
+                    break;
+                case "sugar jam":
+                    correctType = 5;
+                    break;
+                case "Eggs":
+                    correctType = 3;
+                    break;
+                case "yogurt":
+                    correctType = 3;
+                    break;
+                case "milk":
+                    correctType = 3;
                     break;
                 default:
                     correctType = 9
@@ -143,6 +224,14 @@ function Groceries() {
             finalHolder.push({food: item, amount: holder[item]})
         }
         setSortedList(finalHolder)
+    }
+
+    async function deleteGroceryList() {
+        let result = window.confirm("Are you sure you want to delete this list?");
+        if(result){
+            await deleteDoc(doc(db, "groceries", list.id))
+            navigate('/recipes')
+        }
     }
 
     return (
@@ -204,11 +293,11 @@ function Groceries() {
                                 Oils & Spices
                             </div>
                         </div>
-                        <div className="g-body-grocery-header-remove-all">Delete List</div>
+                        <div className="g-body-grocery-header-remove-all" onClick={() => deleteGroceryList()}>Delete List</div>
                     </div>
                     <div className="g-body-grocery-content">
                         {sortedList.map((groceryById) => {
-                            return <Grocery key={groceriesById.food} groceryById={groceryById} allGroceries={allGroceries} list={list.id} />
+                            return <Grocery key={groceriesById.food} groceryById={groceryById} allGroceries={allGroceries} />
                         })}
                     </div>
                 </div>
