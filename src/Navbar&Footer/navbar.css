@@ -227,7 +227,7 @@
 }
 @media screen and (max-width: 480px) {
     .navbar-container {
-        height: 25vh;
+        height: 20vh;
     }
     .navbar-wrapper {
         width: 90%;
@@ -238,7 +238,7 @@
     }
     .navbar-box-two {
         position: absolute;
-        margin-top: 25%;
+        margin-top: 15%;
     }
     .navbar-box-three {
         flex: 25%;
@@ -254,7 +254,7 @@
     }
     .navbar-user-greeting {
         font-size: 1.5rem;
-        top: 5.5rem;
+        top: 1rem;
     }
     .navbar-search input {
         height: 4.5rem;
@@ -288,7 +288,7 @@
         font-size: 1.6rem;
     }
     .navbar-user-greeting {
-        top: 5rem;
+        top: 1rem;
     }
 }
 @media screen and (max-width: 410px) {
@@ -296,7 +296,7 @@
         width: 25rem;
     }
     .navbar-container {
-        height: 25vh;
+        height: 20vh;
     }
     .navbar-wrapper {
         width: 90%;
@@ -307,7 +307,7 @@
     }
     .navbar-box-two {
         position: absolute;
-        margin-top: 27.5%;
+        margin-top: 17.5%;
     }
     .navbar-box-three {
         flex: 25%;
@@ -317,7 +317,7 @@
     }
     .navbar-user-greeting {
         font-size: 1.25rem;
-        top: 6rem;
+        top: 1rem;
     }
     .navbar-search input {
         width: 30rem;
