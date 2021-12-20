@@ -601,7 +601,8 @@
     }
     .landing-content-bx2-footer {
         bottom: -7.5vh;
-        right: 7.5vw;
+        right: 10vw;
+        margin-bottom: 2.5rem;
     }
     .landing-content-bx2-footer-span1 {
         font-size: 2.5rem;

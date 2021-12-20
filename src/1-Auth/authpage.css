@@ -116,3 +116,10 @@
     font-size: 2rem;
     color: #444;
 }
+
+/* RESPONSIVE */
+@media screen and (max-width: 450px) {
+    .auth-container p {
+        font-size: 1.45rem;
+    }
+}

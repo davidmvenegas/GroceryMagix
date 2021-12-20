@@ -40,3 +40,10 @@
     cursor: pointer;
     transform: scale(.965);
 }
+
+/* RESPONSIVE */
+@media screen and (max-width: 1000px) {
+    .exit-page-content {
+        text-align: center;
+    }
+}
