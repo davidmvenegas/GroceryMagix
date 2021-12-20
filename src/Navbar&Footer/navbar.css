@@ -238,7 +238,7 @@
     }
     .navbar-box-two {
         position: absolute;
-        margin-top: 15%;
+        margin-top: 12.5%;
     }
     .navbar-box-three {
         flex: 25%;
@@ -254,7 +254,7 @@
     }
     .navbar-user-greeting {
         font-size: 1.5rem;
-        top: 1rem;
+        top: .5rem;
     }
     .navbar-search input {
         height: 4.5rem;
@@ -288,7 +288,7 @@
         font-size: 1.6rem;
     }
     .navbar-user-greeting {
-        top: 1rem;
+        top: .5rem;
     }
 }
 @media screen and (max-width: 410px) {
@@ -307,7 +307,7 @@
     }
     .navbar-box-two {
         position: absolute;
-        margin-top: 17.5%;
+        margin-top: 12.5%;
     }
     .navbar-box-three {
         flex: 25%;
@@ -317,7 +317,7 @@
     }
     .navbar-user-greeting {
         font-size: 1.25rem;
-        top: 1rem;
+        top: .5rem;
     }
     .navbar-search input {
         width: 30rem;
