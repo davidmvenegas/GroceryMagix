@@ -227,7 +227,7 @@
 }
 @media screen and (max-width: 480px) {
     .navbar-container {
-        height: 17.5vh;
+        height: 25vh;
     }
     .navbar-wrapper {
         width: 90%;
@@ -254,7 +254,7 @@
     }
     .navbar-user-greeting {
         font-size: 1.5rem;
-        top: 1.5rem;
+        top: 5.5rem;
     }
     .navbar-search input {
         height: 4.5rem;
@@ -288,7 +288,7 @@
         font-size: 1.6rem;
     }
     .navbar-user-greeting {
-        top: 1rem;
+        top: 5rem;
     }
 }
 @media screen and (max-width: 410px) {
@@ -296,11 +296,11 @@
         width: 25rem;
     }
     .navbar-container {
-        height: 17.5vh;
+        height: 25vh;
     }
     .navbar-wrapper {
         width: 90%;
-        margin-top: 2.5vh;
+        margin-top: 5vh;
     }
     .navbar-box-one {
         flex: 50%;
@@ -317,7 +317,7 @@
     }
     .navbar-user-greeting {
         font-size: 1.25rem;
-        top: 1.25rem;
+        top: 6rem;
     }
     .navbar-search input {
         width: 30rem;
