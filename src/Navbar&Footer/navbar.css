@@ -289,12 +289,15 @@
     }
     .navbar-user-greeting {
         font-size: 1.25rem;
-        top: 1rem;
+        top: 1.25rem;
     }
     .navbar-search input {
         width: 30rem;
     }
     .navbar-logo {
         font-size: 2.5rem;
+    }
+    .navbar-logout-button {
+        margin-top: 1.5rem;
     }
 }
