@@ -1,5 +1,4 @@
 .navbar-container {
-    /* position: fixed; */
     top: 0;
     width: 100%;
     height: 13.5vh;
@@ -140,4 +139,162 @@
     border-radius: .5rem;
     font-size: 2rem;
     cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 1000px) {
+    .navbar-container {
+        height: 20vh;
+    }
+    .navbar-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 75%;
+        margin-top: 6.5%;
+    }
+    .navbar-box-one {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 55%;
+    }
+    .navbar-box-two {
+        position: absolute;
+        margin-top: 15%;
+    }
+    .navbar-box-three {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 25%;
+    }
+    .navbar-box-four {
+        flex: 15%;
+    }
+    .navbar-wrapper {
+        margin-bottom: 15rem;
+    }
+    .navbar-logo {
+        font-size: 4.75rem;
+        font-weight: 800;
+        color: #111;
+        letter-spacing: -.05rem;
+        cursor: pointer;
+    }
+    .navbar-user-greeting {
+        font-size: 1.6rem;
+        top: 2.5rem;
+    }
+    .navbar-logout-button {
+        margin-top: 4rem;
+    }
+    .navbar-search input {
+        height: 4.5rem;
+        width: 60rem;
+    }
+    #navbar-search-btn {
+        height: 5.075rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    .navbar-container {
+        height: 17.5vh;
+    }
+    .navbar-wrapper {
+        width: 90%;
+        margin-top: 2.5vh;
+    }
+    .navbar-box-one {
+        flex: 50%;
+    }
+    .navbar-box-two {
+        position: absolute;
+        margin-top: 25%;
+    }
+    .navbar-box-three {
+        flex: 25%;
+    }
+    .navbar-box-four {
+        flex: 25%;
+    }
+    .navbar-wrapper {
+        margin-bottom: 10rem;
+    }
+    .navbar-logo {
+        font-size: 3.25rem;
+    }
+    .navbar-user-greeting {
+        font-size: 1.5rem;
+        top: 1.5rem;
+    }
+    .navbar-search input {
+        height: 4.5rem;
+        width: 40rem;
+    }
+    #navbar-search-btn {
+        height: 5rem;
+        width: 7rem;
+    }
+}
+@media screen and (max-width: 450px) {
+    .navbar-wrapper {
+        margin-top: 2.5vh;
+    }
+    .navbar-logo {
+        font-size: 3rem;
+    }
+    .navbar-user-greeting {
+        font-size: 1.25rem;
+        top: 1.5rem;
+    }
+    .navbar-search input {
+        width: 35rem;
+    }
+    .navbar-recipes-box img {
+        height: 7rem;
+    }
+    .navbar-logout-button {
+        margin: 1.2rem 0;
+        margin-top: 2.5rem;
+        font-size: 1.6rem;
+    }
+    .navbar-user-greeting {
+        top: 1rem;
+    }
+}
+@media screen and (max-width: 410px) {
+    .home-display-messsage img {
+        width: 25rem;
+    }
+    .navbar-container {
+        height: 17.5vh;
+    }
+    .navbar-wrapper {
+        width: 90%;
+        margin-top: 2.5vh;
+    }
+    .navbar-box-one {
+        flex: 50%;
+    }
+    .navbar-box-two {
+        position: absolute;
+        margin-top: 27.5%;
+    }
+    .navbar-box-three {
+        flex: 25%;
+    }
+    .navbar-box-four {
+        flex: 25%;
+    }
+    .navbar-user-greeting {
+        font-size: 1.25rem;
+        top: 1rem;
+    }
+    .navbar-search input {
+        width: 30rem;
+    }
+    .navbar-logo {
+        font-size: 2.5rem;
+    }
 }
