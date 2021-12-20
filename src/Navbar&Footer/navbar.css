@@ -227,7 +227,7 @@
 }
 @media screen and (max-width: 480px) {
     .navbar-container {
-        height: 22.5vh;
+        height: 21.5vh;
     }
     .navbar-wrapper {
         width: 90%;
@@ -296,7 +296,7 @@
         width: 25rem;
     }
     .navbar-container {
-        height: 22.5vh;
+        height: 21.5vh;
     }
     .navbar-wrapper {
         width: 90%;
