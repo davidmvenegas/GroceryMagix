@@ -206,24 +206,82 @@
 }
 @media screen and (max-width: 480px) {
     .recipes-content {
-        height: 20vh;
-        width: 60%;
-        margin: 2.75rem 0;
-        padding: .25rem 1rem;
-        border-radius: .5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .recipes-content-1 {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 15vh;
+        position: relative;
+        height: 18vh;
+        width: 95%;
+        margin: 2rem 0;
     }
     .recipes-content-1 img {
+        position: absolute;
+        top: 1rem;
+        left: 1.25rem;
         height: 11rem;
         width: auto;
         border-radius: .5rem;
+        border: 1px solid #444;
+    }
+    .recipes-content-2-title {
+        position: absolute;
+        text-align: center;
+        width: 65%;
+        right: 1.5rem;
+        top: 1.5rem;
+        font-size: 2.5rem;
+    }
+    .recipes-servings-wrapper {
+        position: absolute;
+        right: 8.5rem;
+        bottom: 1rem;
+    }
+    .recipes-g-amount {
+        position: absolute;
+        bottom: .75rem;
+        left: 1.5rem;
+    }
+    .recipes-content-3 img {
+        position: absolute;
+        bottom: 1.25rem;
+        right: 1rem;
+    }
+    .recipes-servings-wrapper p {
+        margin-left: 1.75rem;
+    }
+    .recipes-content-3 h2 {
+        font-size: 1.85rem;
+    }
+    .recipes-g-amount span {
+        font-size: 2.35rem;
+        margin-top: -.3rem;
+    }
+    .recipes-g-dropdown p {
+        font-size: 1.85rem;
+    }
+}
+@media screen and (max-width: 390px) {
+    .recipes-content-1 img {
+        left: 1rem;
+    }
+    .recipes-content-2-title {
+        width: 60%;
+        font-size: 2.25rem;
+    }
+    .recipes-servings-wrapper {
+        position: absolute;
+        right: 6.5rem;
+        bottom: .75rem;
+    }
+    .recipes-content-3 img {
+        height: 3.25rem;
+    }
+    .recipes-content-3 h2 {
+        font-size: 1.75rem;
+    }
+    .recipes-g-amount span {
+        font-size: 2.25rem;
+        margin-top: -.35rem;
+        margin-left: -.25rem;
+    }
+    .recipes-g-dropdown p {
+        font-size: 1.75rem;
     }
 }
