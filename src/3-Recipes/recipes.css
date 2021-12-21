@@ -333,14 +333,14 @@
         margin: 0 0 2rem 1rem;
     }
     .recipes-title-wrapper h1 {
-        font-size: 3.5rem;
+        font-size: 3.35rem;
     }
     .recipe-flip-button-front {
         margin: 0 1rem 3rem 0;
-        width: 21.5rem;
+        width: 21rem;
     }
     .recipe-flip-front-title {
-        font-size: 1.5rem;
+        font-size: 1.475rem;
     }
     .recipe-flip-front-plus {
         padding-right: .5rem;
@@ -348,7 +348,7 @@
     }
     .recipe-flip-button-back {
         margin: 0 1rem 3rem 0;
-        width: 21.5rem;
+        width: 21rem;
     }
     #recipes-remove-all {
         font-size: 1.25rem;

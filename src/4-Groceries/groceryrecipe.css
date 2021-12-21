@@ -34,3 +34,23 @@
     border-radius: .35rem;
     border: .2rem solid #353535;
 }
+
+/* RESPONSIVE */
+@media screen and (max-width: 480px) {
+    .g-body-bx1 {
+        width: 85vw;
+        margin-left: 2.5vw;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 0 .5rem;
+        border: .2rem solid rgba(25, 25, 25, .6);
+        border-radius: .25rem;
+        margin-bottom: 1.5vh;
+    }
+    .g-body-recipe-wrapper {
+        height: 10rem;
+    }
+    .g-body-recipe-wrapper h1 {
+        width: 20rem;
+    }
+}
