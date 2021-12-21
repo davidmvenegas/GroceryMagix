@@ -515,7 +515,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 0;
-        margin: 2.5vh 7.5vw 0;
+        margin: 4vh 7.5vw -1.5vw;
     }
     .landing-header-title {
         font-size: 4.25rem;
@@ -535,7 +535,7 @@
     }
     .landing-content-bx1 {
         max-width: 100vw;
-        margin-top: 2.5rem;
+        margin-top: 1rem;
     }
     .landing-header-list-item2 {
         font-size: 2.5rem;
@@ -603,7 +603,7 @@
     .landing-content-bx2-footer {
         bottom: -6.5vh;
         right: 17vw;
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.25rem;
     }
     .landing-content-bx2-footer-span1 {
         font-size: 2rem;

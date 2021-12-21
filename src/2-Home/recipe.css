@@ -192,7 +192,7 @@ title {
     .home-recipe-card-image img {
         width: 10rem;
         height: 10rem;
-        border-radius: .125rem;
+        border-radius: .5rem;
     }
     .home-recipe-card-title {
         font-size: 2.125rem;
@@ -201,7 +201,8 @@ title {
         width: 100%;
     }
     .home-recipe-card-description {
-        width: 100%;
+        width: 95%;
+        margin-left: 2.5%;
         word-spacing: .05rem;
         text-align: center;
     }
@@ -216,7 +217,7 @@ title {
         padding-bottom: 0;
     }
     .home-recipe-card-details p {
-        font-size: 1rem;
+        font-size: 1.125rem;
         padding-right: 1rem;
     }
     .home-recipe-card-add-btn {
@@ -228,10 +229,10 @@ title {
         bottom: 1.85rem;
     }
     .home-recipe-card-details-time-container {
-        padding-left: .75rem;
+        padding-left: 1.25rem;
     }
     .home-recipe-card-details-time-container img {
-        height: 2rem;
+        height: 1.75rem;
         padding-right: .5rem;
     }
 }

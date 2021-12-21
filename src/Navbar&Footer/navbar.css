@@ -254,7 +254,7 @@
     }
     .navbar-user-greeting {
         font-size: 1.5rem;
-        top: .5rem;
+        top: .65rem;
     }
     .navbar-search input {
         height: 4.5rem;
@@ -288,7 +288,7 @@
         font-size: 1.6rem;
     }
     .navbar-user-greeting {
-        top: .5rem;
+        top: .65rem;
     }
 }
 @media screen and (max-width: 410px) {
@@ -317,7 +317,7 @@
     }
     .navbar-user-greeting {
         font-size: 1.25rem;
-        top: .5rem;
+        top: .65rem;
     }
     .navbar-search input {
         width: 30rem;
