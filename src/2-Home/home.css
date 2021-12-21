@@ -157,4 +157,16 @@
         margin-bottom: 12.5rem;
         width: 90%;
     }
+    .home-display-messsage {
+        margin-top: 5rem;
+        max-width: 80vw;
+    }
+    .home-display-messsage h1 {
+        font-size: 3rem;
+        line-height: 4rem;
+    }
+    .home-display-messsage img {
+        margin-top: 10rem;
+        height: 25vh;
+    }
 }
