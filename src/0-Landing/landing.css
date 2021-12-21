@@ -540,7 +540,7 @@
     .landing-header-list-item2 {
         font-size: 2.5rem;
         padding: 1.4rem 1.35rem;
-        margin-top: 2.5rem;
+        margin-top: 3.25rem;
         margin-left: 22.5vw;
     }
     .landing-content-hero-description {
@@ -554,7 +554,8 @@
         text-align: center;
     }
     .landing-content-hero {
-        max-width: 100%;
+        max-width: 90%;
+        margin-left: 5%;
         font-size: 4rem;
         line-height: 5rem;
         font-weight: 600;
@@ -600,17 +601,17 @@
         border-radius: 50%;
     }
     .landing-content-bx2-footer {
-        bottom: -7.5vh;
-        right: 10vw;
+        bottom: -6.5vh;
+        right: 17vw;
         margin-bottom: 2.5rem;
     }
     .landing-content-bx2-footer-span1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         line-height: 2rem;
         letter-spacing: -.05rem;
     }
     .landing-content-bx2-footer-span2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         line-height: 2rem;
         color: #065F46;
         padding-left: .5rem;
