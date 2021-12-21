@@ -46,3 +46,53 @@
     font-size: 2.25rem;
     font-weight: 500;
 }
+
+@media screen and (max-width: 480px) {
+    .g-body-grocery-item {
+        border-radius: .5rem;
+        width: 92.5%;
+        margin-left: 0%;
+    }
+    .g-body-grocery-item-bx1 {
+        margin-left: 1.25rem;
+    }
+    .g-body-grocery-item-bx1 img {
+        margin: 0 1rem 0 .25rem;
+        height: 4.75rem;
+        max-width: 4.75rem;
+        border-radius: .25rem;
+    }
+    #grocery-item-type {
+        margin-right: 1rem;
+    }
+    .g-body-grocery-item-title {
+        font-size: 1.75rem;
+        max-width: 40vw;
+    }
+    .g-body-grocery-item-measurement {
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+    .g-body-grocery-item-amount {
+        margin: 0 1.5rem 0 .5rem;
+        font-size: 1.75rem;
+        font-weight: 500;
+    }
+}
+@media screen and (max-width: 480px) {
+    .g-body-grocery-item-title {
+        font-size: 1.75rem;
+        max-width: 35vw;
+    }
+    .g-body-grocery-item-measurement {
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+    .g-body-grocery-item-amount {
+        margin: 0 1.5rem 0 .5rem;
+        font-size: 1.75rem;
+        font-weight: 500;
+    }
+}

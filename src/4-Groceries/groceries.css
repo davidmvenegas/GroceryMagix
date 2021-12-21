@@ -232,8 +232,8 @@
 
 /* RESPONSIVE */
 @media screen and (max-width: 480px) {
-    .g-body {
-        flex-direction: column;
+    .g-back-btn {
+        font-size: 1.75rem;
     }
     .g-header {
         display: flex;
@@ -241,12 +241,15 @@
         justify-content: center;
         width: 90vw;
         margin-left: 5vw;
-        margin-top: 3.5vh;
+        margin-top: 2.5vh;
+        position: relative;
+        height: 10vh;
     }
     .g-body {
         display: flex;
-        width: 90vw;
-        margin-left: 5vw;
+        flex-direction: column;
+        width: 95vw;
+        margin-left: 2.5vw;
         margin-top: 1.5vh;
         min-height: 40vh;
     }
@@ -263,6 +266,74 @@
         position: absolute;
         padding: 0;
         margin: 0;
-        top: 2.5rem;
+        top: 32vh;
+        left: 7vw;
+        font-size: 1.55rem;
+    }
+    .g-body-grocery-content {
+        margin: 2rem 0 0;
+    }
+    .g-body-grocery-header {
+        width: 100%;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .g-body-grocery-header-types {
+        margin-left: 5%;
+        margin-top: .25rem;
+    }
+    .g-body-grocery-item-type-wrapper {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-right: 1.5rem;
+    }
+    .g-body-grocery-item-type {
+        margin-right: .5rem;
+        min-height: 1.5rem;
+        min-width: 1.5rem;
+    }
+    .g-header-bx1 {
+        position: absolute;
+        top: -1.5vh;
+        left: 1.5vw;
+    }
+    .g-header-bx2 {
+        position: absolute;
+        top: -1vh;
+        width: 53.5%;
+        right: 16.5vw;
+        padding-bottom: .35rem;
+        border-bottom: 2px dotted #777;
+    }
+    .g-title {
+        font-size: 3.75rem;
+        width: 100%;
+    }
+    .g-header-bx3 {
+        position: absolute;
+        bottom: -1vh;
+        margin: 0;
+        right: 21vw;
+    }
+    .g-header-bx4 {
+        position: absolute;
+        bottom: -.75vh;
+        left: 35.5vw;
+        margin: 0;
+    }
+    .g-header-bx5 {
+        position: absolute;
+        bottom: 1.75vh;
+        right: 1.75vw;
+    }
+    .g-cart-wrapper span {
+        margin-bottom: 6.25rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .g-body-grocery-header-remove-all {
+        font-size: 1.4rem;
     }
 }

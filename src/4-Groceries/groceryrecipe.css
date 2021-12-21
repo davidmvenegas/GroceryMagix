@@ -39,13 +39,14 @@
 @media screen and (max-width: 480px) {
     .g-body-bx1 {
         width: 85vw;
-        margin-left: 2.5vw;
+        margin-left: 3.25vw;
         flex-direction: row;
         overflow-x: auto;
-        padding: 0 .5rem;
-        border: .2rem solid rgba(25, 25, 25, .6);
-        border-radius: .25rem;
+        padding: 0 .75rem;
+        border: .2rem solid rgba(25, 25, 25, .625);
+        border-radius: .5rem;
         margin-bottom: 1.5vh;
+        background-color: #f4f4f4ba;
     }
     .g-body-recipe-wrapper {
         height: 10rem;
