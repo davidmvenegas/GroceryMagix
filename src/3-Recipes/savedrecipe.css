@@ -194,3 +194,36 @@
 .recipes-content-3 img:active {
     transform: scale(.975);
 }
+
+/* RESPONSIVE */
+@media screen and (max-width: 1200px) {
+    .recipes-content-1 {
+        height: 15vh;
+    }
+    .recipes-content-1 img {
+        height: 12.5rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    .recipes-content {
+        height: 20vh;
+        width: 60%;
+        margin: 2.75rem 0;
+        padding: .25rem 1rem;
+        border-radius: .5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .recipes-content-1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 15vh;
+    }
+    .recipes-content-1 img {
+        height: 11rem;
+        width: auto;
+        border-radius: .5rem;
+    }
+}

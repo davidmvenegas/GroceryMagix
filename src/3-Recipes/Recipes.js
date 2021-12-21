@@ -1,4 +1,4 @@
-import {React, useEffect, useState} from 'react'
+import { React, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useUserContext } from "../1-Auth/context/userContext";
 import { useRecipeContext } from '../RecipeContext';
@@ -128,7 +128,7 @@ function Recipes() {
                             <p onClick={handleDeleteAll} id="recipes-remove-all">Remove all items</p>
                         </div>
                         <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-                            <button style={savedRecipes.length > 0 ? {pointerEvents: "all"} : {pointerEvents: "none", backgroundColor: "#bbb" }} className="recipe-flip-button-front" onClick={handleFlip}><span className="recipe-flip-front-plus">+</span><p className="recipe-flip-front-title">Create New List</p></button>
+                            <button style={savedRecipes.length > 0 ? {pointerEvents: "all"} : {pointerEvents: "none", backgroundColor: "#bbb" }} className="recipe-flip-button-front" onClick={handleFlip}><span className="recipe-flip-front-plus">+</span><p className="recipe-flip-front-title">Create Grocery List</p></button>
                             <button className="recipe-flip-button-back">
                                     <img className="recipe-flip-text-cancel" onClick={handleFlip} src={RedXIcon} alt='thin_x'/>
                                     <form className="recipe-flip-text-form" onSubmit={handleSubmit}>
@@ -157,7 +157,7 @@ function Recipes() {
                 </div>
                 <div className="recipes-box-2">
                     <div className="recipes-shopping-list-wrapper">
-                        <h1 className="recipes-shopping-lists-title">Shopping Lists (<span>{savedGroceries.length}</span>)</h1>
+                        <h1 className="recipes-shopping-lists-title">Grocery Lists (<span>{savedGroceries.length}</span>)</h1>
                         <div className="recipes-shopping-lists-content-seperator"></div>
                         <div className="recipes-shopping-lists-container">
                             {savedGroceries.map((list) => (
