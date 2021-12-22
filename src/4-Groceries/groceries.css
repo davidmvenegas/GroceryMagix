@@ -250,7 +250,7 @@
         flex-direction: column;
         width: 95vw;
         margin-left: 2.5vw;
-        margin-top: .75rem;
+        margin-top: 1rem;
         min-height: 40vh;
     }
     .g-body-bx2 {
@@ -266,7 +266,7 @@
         position: absolute;
         padding: 0;
         margin: 0;
-        top: 29rem;
+        top: 30vh;
         left: 7vw;
         font-size: 1.55rem;
         cursor: pointer;
@@ -329,9 +329,11 @@
         bottom: 1.75vh;
         right: 1.75vw;
     }
+    .g-cart-wrapper {
+        position: relative;
+    }
     .g-cart-wrapper span {
         position: absolute;
-        font-size: 2.5rem;
         margin-top: -.25rem;
     }
     .g-copy-icon {

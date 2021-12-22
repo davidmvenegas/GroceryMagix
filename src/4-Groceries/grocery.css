@@ -52,7 +52,7 @@
         border-radius: .5rem;
         width: 92.5%;
         margin-left: 0%;
-        background-color: rgba(192, 192, 192);
+        background-color: rgba(192, 192, 192, .6);
     }
     .g-body-grocery-item-bx1 {
         margin-left: 1.25rem;
