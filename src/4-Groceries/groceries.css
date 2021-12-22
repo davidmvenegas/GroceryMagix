@@ -266,7 +266,7 @@
         position: absolute;
         padding: 0;
         margin: 0;
-        top: 32vh;
+        top: 29rem;
         left: 7vw;
         font-size: 1.55rem;
     }
@@ -327,5 +327,10 @@
         position: absolute;
         bottom: 1.75vh;
         right: 1.75vw;
+    }
+    .g-cart-wrapper span {
+        position: absolute;
+        font-size: 2.5rem;
+        margin-top: -.25rem;
     }
 }
