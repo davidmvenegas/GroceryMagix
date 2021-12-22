@@ -144,7 +144,7 @@ function Recipes() {
                             <div className="saved-recipe-wrapper">
                                 {totalGroceries === 0 && (<div className="find-recipes-message-wrapper">
                                     <img src={HungryGif} alt="hungry_gif" />
-                                    <h1>Hungry? Start searching for recipes!</h1>
+                                    <h1>Hungry? Add recipes to start a grocery list</h1>
                                 </div>)}
                                 {savedRecipes.map((recipe) => {
                                     return <SavedRecipe key={recipe.id} recipe={recipe} />
