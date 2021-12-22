@@ -9,9 +9,9 @@ const Auth = () => {
   };
   return (
     <div className="auth-box-container">
-      {!index ? <Signin /> : <Signup />}
+      {!index ? <Signup /> : <Signin />}
       <p onClick={toggleIndex}>
-        {!index ? "New user? Click here " : "Already have an acount?"}
+        {index ? "New user? Click here " : "Already have an acount? Log In"}
       </p>
     </div>
   );
