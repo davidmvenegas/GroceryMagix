@@ -269,6 +269,7 @@
         top: 29rem;
         left: 7vw;
         font-size: 1.55rem;
+        cursor: pointer;
     }
     .g-body-grocery-content {
         margin: 2rem 0 0;
@@ -332,5 +333,8 @@
         position: absolute;
         font-size: 2.5rem;
         margin-top: -.25rem;
+    }
+    .g-copy-icon {
+        cursor: pointer;
     }
 }
