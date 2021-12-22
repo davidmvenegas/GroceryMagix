@@ -266,7 +266,7 @@
         position: absolute;
         padding: 0;
         margin: 0;
-        top: 30vh;
+        top: 31.5vh;
         left: 7vw;
         font-size: 1.55rem;
         cursor: pointer;
@@ -334,7 +334,7 @@
     }
     .g-cart-wrapper span {
         position: absolute;
-        margin-top: -.25rem;
+        top: -2rem;
     }
     .g-copy-icon {
         cursor: pointer;
