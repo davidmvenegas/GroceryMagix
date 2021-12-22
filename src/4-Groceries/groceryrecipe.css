@@ -46,10 +46,10 @@
         border: .2rem solid rgba(25, 25, 25, .625);
         border-radius: .5rem;
         margin-bottom: 1.5vh;
-        background-color: #f4f4f4ba;
+        background-color: #f4f4f4;
     }
     .g-body-recipe-wrapper {
-        height: 10rem;
+        height: 8.5rem;
     }
     .g-body-recipe-wrapper h1 {
         width: 20rem;

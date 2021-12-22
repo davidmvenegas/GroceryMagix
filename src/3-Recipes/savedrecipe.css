@@ -206,8 +206,11 @@
 }
 @media screen and (max-width: 480px) {
     .recipes-content {
+        background: rgba(0, 0, 0, 0.125);
+    }
+    .recipes-content {
         position: relative;
-        height: 18vh;
+        height: 16.25rem;
         width: 95%;
         margin: 2rem 0;
     }
@@ -221,6 +224,7 @@
         border: 1px solid #444;
     }
     .recipes-content-2-title {
+        color: #222;
         position: absolute;
         text-align: center;
         width: 65%;

@@ -341,10 +341,13 @@
     }
     .recipe-flip-front-title {
         font-size: 1.475rem;
+        color: black;
     }
     .recipe-flip-front-plus {
         padding-right: .5rem;
         font-size: 2.5rem;
+        padding-bottom: .125rem;
+        color: black;
     }
     .recipe-flip-button-back {
         margin: 0 1rem 3rem 0;
@@ -362,7 +365,7 @@
     }
     .recipes-footer {
         margin: 4.25rem 1rem 0 0;
-        height: 12.5vh;
+        height: 10vh;
     }
     .recipes-footer h1 {
         font-size: 2.5rem;

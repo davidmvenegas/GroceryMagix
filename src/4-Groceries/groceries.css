@@ -243,14 +243,14 @@
         margin-left: 5vw;
         margin-top: 2.5vh;
         position: relative;
-        height: 10vh;
+        height: 9rem;
     }
     .g-body {
         display: flex;
         flex-direction: column;
         width: 95vw;
         margin-left: 2.5vw;
-        margin-top: 1.5vh;
+        margin-top: .75rem;
         min-height: 40vh;
     }
     .g-body-bx2 {
@@ -327,13 +327,5 @@
         position: absolute;
         bottom: 1.75vh;
         right: 1.75vw;
-    }
-    .g-cart-wrapper span {
-        margin-bottom: 6.25rem;
-    }
-}
-@media screen and (max-width: 400px) {
-    .g-body-grocery-header-remove-all {
-        font-size: 1.4rem;
     }
 }
