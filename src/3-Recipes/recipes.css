@@ -305,21 +305,24 @@
     }
     .recipes-shopping-lists-content-seperator {
         height: .2rem;
-        width: 18rem;
+        width: 25rem;
         background-color: gray;
         margin: 1rem 0;
     }
     .recipes-shopping-lists-container h1 {
         font-size: 2.25rem;
-        max-width: 18rem;
+        max-width: 50rem;
         margin: 1.5rem 0;
-        padding: 1rem 12.5rem 1rem 12.5rem;
         min-height: 2.5rem;
-        text-align: center;
+        padding-left: 1.5rem;
+        text-align: flex-start;
     }
     .recipes-shopping-lists-container {
         padding-left: .125rem;
         margin-top: 2rem;
+    }
+    .recipes-shopping-list-wrapper {
+        width: fit-content;
     }
     #recipes-list-item-delete {
         right: 1rem;
@@ -338,6 +341,7 @@
     .recipe-flip-button-front {
         margin: 0 1rem 3rem 0;
         width: 21rem;
+        border-radius: 5px;
     }
     .recipe-flip-front-title {
         font-size: 1.475rem;
@@ -352,10 +356,11 @@
     .recipe-flip-button-back {
         margin: 0 1rem 3rem 0;
         width: 21rem;
+        border-radius: 5px;
     }
     #recipes-remove-all {
-        font-size: 1.25rem;
-        padding-top: .5rem;
+        font-size: 1.125rem;
+        padding-top: 1rem;
     }
     .my-recipes-seperator {
         margin-right: 0;
@@ -398,13 +403,10 @@
     .recipes-title-wrapper h1 {
         font-size: 3rem;
     }
-    .recipes-shopping-lists-container h1 {
-        padding: 1rem 10rem 1rem 10rem;
-    }
-    #recipes-remove-all {
+    /* #recipes-remove-all {
         font-size: 1rem;
         padding-top: .5rem;
-    }
+    } */
     .recipe-flip-button-front {
         margin: 0 1rem 3rem 0;
         width: 18.75rem;

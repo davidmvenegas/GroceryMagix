@@ -40,7 +40,7 @@
 }
 .home-side-container {
     height: 140.65vh;
-    width: 12.5%;
+    width: 15%;
     margin: 5vh 3.5% 1.5vh 1.75%;
     padding: .35vh 1vw .35vh 0;
     border-right: 2px dotted #bbb;
@@ -127,21 +127,28 @@
 }
 @media screen and (max-width: 1400px) {
     .home-side-container {
-        padding: .35vh 2.5vw .35vh 0;
+        width: 16.5%;
     }
     .home-side-container label {
         font-size: 1.45rem;
     }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1250px) {
+    .home-display-messsage img {
+        margin-top: 7.5rem;
+        height: 45rem;
+    }
+}
+@media screen and (max-width: 1050px) {
     .home-side-container {
-        padding: .35vh 4vw .35vh 0;
+        padding: .35vh 2vw .35vh 0;
+        width: 17.5%;
     }
     .home-side-container label {
         font-size: 1.25rem;
     }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 850px) {
     .home-side-container {
         display: none;
     }

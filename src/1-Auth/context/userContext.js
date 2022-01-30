@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react"
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile, sendPasswordResetEmail } from "firebase/auth"
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile, sendPasswordResetEmail, signInAnonymously } from "firebase/auth"
 import { collection, doc, addDoc, deleteDoc, getDoc, getDocs, onSnapshot, query, where, updateDoc, increment } from "firebase/firestore"
 import { auth, db } from "./authIndex"
 
@@ -44,7 +44,22 @@ export const UserContextProvider = ({ children }) => {
         })
         .finally(() => setLoading(false))
     }
-    
+
+    const guestSignIn = () => {
+        setLoading(true)
+        signInAnonymously(auth)
+        .then(() =>
+            updateProfile(auth.currentUser, {
+            displayName: "Guest",
+            })
+        )
+        .catch((err) => {
+            setError(err.message)
+            setTimeout(() => {setError("")}, 4000)
+        })
+        .finally(() => setLoading(false))
+    }
+
     const signInUser = (email, password) => {
         setLoading(true)
         signInWithEmailAndPassword(auth, email, password)
@@ -54,7 +69,7 @@ export const UserContextProvider = ({ children }) => {
         })
         .finally(() => setLoading(false))
     }
-    
+
     const logoutUser = () => {
         signOut(auth)
     }
@@ -91,6 +106,7 @@ export const UserContextProvider = ({ children }) => {
         forgotPassword,
         resetPassword,
         setResetPassword,
+        guestSignIn,
     }
     return (
         <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>

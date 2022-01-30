@@ -164,7 +164,7 @@ function Home({ handleAddRecipe }) {
                 <div className="home-center-container">
                     {(recipes.length === 0) &&
                         <div className="home-display-messsage">
-                            <h1>Welcome{user.displayName != null && (" "+user.displayName)}. To begin, search for the recipes you'd like to make </h1>
+                            <h1>Welcome{(user.displayName != null && user.isAnonymous !== true) && (" "+user.displayName)}. To begin, search for the recipes you'd like to make </h1>
                             <img src={FoodIcon} alt="food_icon"/>
                         </div>}
                     {recipes.map((recipe) => {

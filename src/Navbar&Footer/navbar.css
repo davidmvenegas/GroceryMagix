@@ -45,7 +45,7 @@
     justify-content: center;
 }
 .navbar-search input {
-    height: 4.35rem;
+    height: 4.5rem;
     width: 55rem;
     outline: none;
     border: none;
@@ -66,7 +66,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 4.75rem;
+    height: 4.5rem;
     width: 6.5rem;
     outline: none;
     border: none;
@@ -119,10 +119,10 @@
     flex: 10.5%;
 }
 .navbar-user-greeting {
+    position: absolute;
     font-size: 1.4rem;
     font-weight: 500;
-    top: 1.75rem;
-    position: absolute;
+    margin-top: -.5rem;
 }
 .navbar-user-greeting span {
     font-weight: 600;
@@ -140,20 +140,25 @@
     font-size: 2rem;
     cursor: pointer;
 }
+#returnLoginAnon {
+    text-align: center;
+    background-color: #222;
+    border: none;
+    color: white;
+    padding: 1.2rem;
+    margin: 1.2rem 0;
+    margin-top: 1.5rem;
+    box-shadow: 0 .1rem .6rem #3586ff;
+    width: fit-content;
+    border-radius: .5rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
 
 /* RESPONSIVE */
 @media screen and (max-height: 850px) {
     .navbar-container {
         height: 17.5vh;
-    }
-    .navbar-user-greeting {
-        top: 2.5rem;
-    }
-    .navbar-logout-button {
-        margin-top: 3rem;
-    }
-    #navbar-search-btn {
-        height: 4.8rem;
     }
     .navbar-logo {
         font-size: 3.75rem;
@@ -163,16 +168,28 @@
     .navbar-container {
         height: 17.5vh;
     }
-    .navbar-logout-button {
-        margin-top: 4rem;
+}
+@media (max-width: 1150px) {
+    .navbar-search input {
+        height: 5rem;
     }
     #navbar-search-btn {
-        height: 4.75rem;
+        height: 5rem;
+    }
+}
+@media (max-width: 1250px) {
+    .navbar-user-greeting {
+        top: 3.5rem;
+    }
+}
+@media (max-width: 11250px) {
+    .navbar-user-greeting {
+        top: 4rem;
     }
 }
 @media screen and (max-width: 1000px) {
     .navbar-container {
-        height: 20vh;
+        height: 17.5vh;
     }
     .navbar-wrapper {
         display: flex;
@@ -189,7 +206,7 @@
     }
     .navbar-box-two {
         position: absolute;
-        margin-top: 15%;
+        margin-top: 12.5%;
     }
     .navbar-box-three {
         display: flex;
@@ -211,34 +228,75 @@
         cursor: pointer;
     }
     .navbar-user-greeting {
-        font-size: 1.6rem;
-        top: 2.5rem;
+        margin-top: -2.75rem;
     }
     .navbar-logout-button {
         margin-top: 4rem;
     }
     .navbar-search input {
-        height: 4.5rem;
         width: 60rem;
     }
+}
+@media screen and (max-width: 850px) {
+    .navbar-search input {
+        height: 6rem;
+    }
     #navbar-search-btn {
-        height: 5.075rem;
+        height: 6rem;
+    }
+    .navbar-box-two {
+        margin-top: 15%;
+    }
+    .navbar-user-greeting {
+        font-size: 1.75rem;
+        margin-top: -2.75rem;
+    }
+    .navbar-box-four {
+        margin-top: -1rem;
+    }
+}
+@media screen and (max-width: 650px) {
+    .navbar-search input {
+        height: 6.5rem;
+    }
+    #navbar-search-btn {
+        height: 6.5rem;
+    }
+    .navbar-box-two {
+        margin-top: 18.5%;
+    }
+    .navbar-user-greeting {
+        margin-top: -2rem;
+    }
+}
+@media screen and (max-width: 560px) {
+    .navbar-user-greeting {
+        margin-top: -1rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .navbar-user-greeting {
+        margin-top: 1.5rem;
     }
 }
 @media screen and (max-width: 480px) {
     .navbar-container {
-        height: 21.5vh;
+        height: 18.5vh;
     }
     .navbar-wrapper {
-        width: 90%;
-        margin-top: 2.5vh;
+        width: 85%;
     }
     .navbar-box-one {
-        flex: 50%;
+        flex: 25%;
     }
     .navbar-box-two {
-        position: absolute;
-        margin-top: 15%;
+        margin-top: 17.5rem;
+    }
+    .navbar-search input {
+        height: 5.5rem;
+    }
+    #navbar-search-btn {
+        height: 5.5rem;
     }
     .navbar-box-three {
         flex: 25%;
@@ -252,80 +310,27 @@
     .navbar-logo {
         font-size: 3.25rem;
     }
-    .navbar-user-greeting {
-        font-size: 1.5rem;
-        top: .65rem;
-    }
     .navbar-search input {
-        height: 4.5rem;
         width: 40rem;
     }
     #navbar-search-btn {
-        height: 5rem;
         width: 7rem;
+    }
+    .navbar-user-greeting {
+        margin-top: -1.5rem;
     }
 }
 @media screen and (max-width: 450px) {
-    .navbar-wrapper {
-        margin-top: 2.5vh;
-    }
-    .navbar-logo {
-        font-size: 3rem;
-    }
-    .navbar-user-greeting {
-        font-size: 1.25rem;
-        top: 1.5rem;
-    }
-    .navbar-search input {
-        width: 35rem;
-    }
-    .navbar-recipes-box img {
-        height: 7rem;
-    }
-    .navbar-logout-button {
-        margin: 1.2rem 0;
-        margin-top: 2.5rem;
-        font-size: 1.6rem;
-    }
-    .navbar-user-greeting {
-        top: .65rem;
+    .navbar-box-two {
+        top: 3rem;
+        margin-top: 9rem;
     }
 }
 @media screen and (max-width: 410px) {
-    .home-display-messsage img {
-        width: 25rem;
-    }
-    .navbar-container {
-        height: 21.5vh;
-    }
     .navbar-wrapper {
-        width: 90%;
-        margin-top: 5vh;
-    }
-    .navbar-box-one {
-        flex: 50%;
-    }
-    .navbar-box-two {
-        position: absolute;
-        margin-top: 15%;
-    }
-    .navbar-box-three {
-        flex: 25%;
-    }
-    .navbar-box-four {
-        flex: 25%;
-    }
-    .navbar-user-greeting {
-        font-size: 1.25rem;
-        top: .65rem;
+        width: 80%;
     }
     .navbar-search input {
         width: 30rem;
-    }
-    .navbar-logo {
-        font-size: 2.5rem;
-    }
-    .navbar-logout-button {
-        margin-top: 1.5rem;
     }
 }

@@ -5,7 +5,7 @@ const Signup = () => {
   const emailRef = useRef()
   const nameRef = useRef()
   const psdRef = useRef()
-  const { registerUser } = useUserContext()
+  const { registerUser, guestSignIn } = useUserContext()
 
   const onSubmit = (e) => {
     e.preventDefault()
@@ -25,7 +25,7 @@ const Signup = () => {
         <button className="auth-button" type="submit">Register</button>
       </form>
       <p id="ORAuth">OR</p>
-      <div className="guest-auth-button">Continue as Guest</div>
+      <div onClick={() => guestSignIn()} className="guest-auth-button">Continue as Guest</div>
     </div>
   )
 }

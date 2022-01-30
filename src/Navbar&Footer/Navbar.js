@@ -1,30 +1,30 @@
 import { React, useEffect, useState} from 'react'
 import './navbar.css'
-import { Link, useNavigate } from 'react-router-dom';
-import { useUserContext } from "../1-Auth/context/userContext";
-import { useRecipeContext } from '../RecipeContext';
+import { Link, useNavigate } from 'react-router-dom'
+import { useUserContext } from "../1-Auth/context/userContext"
+import { useRecipeContext } from '../RecipeContext'
 import DishIcon from '../Images/dish_icon.png'
 import SearchIcon from '../Images/search_icon.png'
 
 function Navbar() {
-    const navigate = useNavigate();
-    const { logoutUser, user, collection, db, query, where, getDocs } = useUserContext();
+    const navigate = useNavigate()
+    const { logoutUser, user, collection, db, query, where, getDocs } = useUserContext()
     const { setInput, handleSubmit, updateSavedRecipes } = useRecipeContext()
     let [queryRecipeCount, setQueryRecipeCount] = useState()
 
     useEffect(() => {
-    const countRecipes = async () => {
-        try {
-            const recipeRef = collection(db, "recipes")
-            const q = query(recipeRef, where("userUID", "==", user.uid))
-            const querySnapshot = await getDocs(q)
-            setQueryRecipeCount(querySnapshot.size)
-        } catch (e) {
-        console.error("Error adding document: ", e);
+        const countRecipes = async () => {
+            try {
+                const recipeRef = collection(db, "recipes")
+                const q = query(recipeRef, where("userUID", "==", user.uid))
+                const querySnapshot = await getDocs(q)
+                setQueryRecipeCount(querySnapshot.size)
+            } catch (e) {
+            console.error("Error adding document: ", e)
+            }
         }
-    }
-    countRecipes()
-}, [collection, db, getDocs, query, updateSavedRecipes, user.uid, where])
+        countRecipes()
+    }, [collection, db, getDocs, query, updateSavedRecipes, user.uid, where])
 
     return (
         <div className="navbar-container">

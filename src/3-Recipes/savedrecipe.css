@@ -251,10 +251,10 @@
         margin-left: 1.75rem;
     }
     .recipes-content-3 h2 {
-        font-size: 1.85rem;
+        font-size: 1.5rem;
     }
     .recipes-g-amount span {
-        font-size: 2.35rem;
+        font-size: 2rem;
         margin-top: -.3rem;
     }
     .recipes-g-dropdown p {
@@ -278,14 +278,14 @@
         height: 3.25rem;
     }
     .recipes-content-3 h2 {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
     .recipes-g-amount span {
-        font-size: 2.25rem;
-        margin-top: -.35rem;
+        font-size: 1.75rem;
+        margin-top: -.125rem;
         margin-left: -.25rem;
     }
     .recipes-g-dropdown p {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 }

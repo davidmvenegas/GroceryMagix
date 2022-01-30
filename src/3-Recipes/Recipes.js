@@ -53,6 +53,11 @@ function Recipes() {
             await deleteDoc(docRef)
         })
         setUpdateSavedRecipes(Math.random())
+        setTimeout(() => {callReset()}, 500)
+    }
+
+    function callReset() {
+        setUpdateSavedRecipes(Math.random())
     }
 
     async function createGroceryList() {
@@ -76,16 +81,15 @@ function Recipes() {
         }
         // ^ GROCERY LIST REDUCER ^ //
         try {
-        const docRef = await addDoc(collection(db, "groceries"), {
-            listName: listName,
-            savedRecipes: savedRecipes,
-            groceriesById: groceriesById,
-            allGroceries: allGroceries,
-            userUID: user.uid,
-        });
-        console.log("Document written with ID: ", docRef.id);
+            await addDoc(collection(db, "groceries"), {
+                listName: listName,
+                savedRecipes: savedRecipes,
+                groceriesById: groceriesById,
+                allGroceries: allGroceries,
+                userUID: user.uid,
+            })
         } catch (e) {
-        console.error("Error adding document: ", e);
+            console.error("Error adding document: ", e);
         }
     }
 
@@ -161,7 +165,7 @@ function Recipes() {
                         <div className="recipes-shopping-lists-content-seperator"></div>
                         <div className="recipes-shopping-lists-container">
                             {savedGroceries.map((list) => (
-                                <div id='recipes-list-item-wrapper'>
+                                <div key={list.name+Math.random()} id='recipes-list-item-wrapper'>
                                     <img id='recipes-list-item-delete' onClick={() => deleteGroceryList(list.id)} src={TrashIcon} alt="trash_icon" />
                                     <Link id='recipes-list-item' to='/groceries' state={{list : list}}>
                                         <h1 style={list.listName.length > 12 ? {fontSize: '1.85rem'} : {fontSize: '2.25rem'}}>{list.listName}</h1>

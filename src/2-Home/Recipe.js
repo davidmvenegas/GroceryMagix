@@ -21,7 +21,7 @@ function Recipe(recipe) {
 
     async function addRecipeInfo() {
         try {
-        const newRecipeRef = await addDoc(collection(db, "recipes"), {
+        await addDoc(collection(db, "recipes"), {
             ingredients: ingredients,
             recipeLabel: recipeLabel,
             recipeYield: recipeYield,
@@ -31,7 +31,6 @@ function Recipe(recipe) {
         })
         setUpdateSavedRecipes(Math.random())
         setRecipeAdded(true)
-        console.log("Document written with ID: ", newRecipeRef.id);
         } catch (e) {
         console.error("Error adding document: ", e);
         }
