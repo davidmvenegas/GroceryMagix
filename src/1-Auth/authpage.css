@@ -116,10 +116,46 @@
     font-size: 2rem;
     color: #444;
 }
+#switchAuth {
+    font-size: 1.75rem;
+}
+#switchAuth:hover {
+    text-decoration: underline;
+}
+#ORAuth {
+    margin: 1rem 0 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.guest-auth-button {
+    background-color: cornflowerblue;
+    text-align: center;
+    border: none;
+    color: white;
+    padding: 1.2rem;
+    margin: 1rem 0 0;
+    box-shadow: 0 .1rem .6rem #ccc;
+    width: 95%;
+    border-radius: .6rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+#forgotPass {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    margin: .75rem 0;
+}
+#rpBACK {
+    margin: 1rem 0 0;
+    font-size: 1.65rem;
+}
+#resetPassForm {
+    margin: 2rem 0;
+}
 
 /* RESPONSIVE */
 @media screen and (max-width: 450px) {
     .auth-container p {
-        font-size: 1.45rem;
+        font-size: 1.75rem;
     }
 }

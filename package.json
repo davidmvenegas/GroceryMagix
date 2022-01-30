@@ -19,6 +19,7 @@
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
     "react-sparkle": "^1.0.9",
+    "sweetalert2": "^11.3.10",
     "web-vitals": "^1.0.1"
   },
   "engines": {
