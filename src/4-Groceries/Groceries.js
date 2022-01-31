@@ -1,7 +1,8 @@
 import { React, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
-import { useUserContext } from "../1-Auth/context/userContext";
+import { useUserContext } from "../1-Auth/context/userContext"
+import Swal from 'sweetalert2'
 import './groceries.css'
 import Grocery from './Grocery'
 import GroceryRecipe from './GroceryRecipe'
@@ -62,8 +63,20 @@ function Groceries() {
         })
         let cleanText = copyOfList.join(" ")
         navigator.clipboard.writeText(cleanText)
-        setTimeout(() => alert("Shopping List Copied to Clipboard!"), 250)
+        setTimeout(() => Toast.fire({icon: 'success', title: 'Shopping List Copied to Clipboard!'}))
     }
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
 
     function handleSelection(e) {
         switch (e.target.selectedIndex) {
