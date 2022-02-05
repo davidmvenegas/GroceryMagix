@@ -167,7 +167,7 @@ function Recipes() {
                             {savedGroceries.map((list) => (
                                 <div key={list.name+Math.random()} id='recipes-list-item-wrapper'>
                                     <img id='recipes-list-item-delete' onClick={() => deleteGroceryList(list.id)} src={TrashIcon} alt="trash_icon" />
-                                    <Link id='recipes-list-item' to='/groceries' state={{list : list}}>
+                                    <Link id='recipes-list-item' to='/groceries' state={{list: list}}>
                                         <h1 style={list.listName.length > 12 ? {fontSize: '1.85rem'} : {fontSize: '2.25rem'}}>{list.listName}</h1>
                                     </Link>
                                 </div>
